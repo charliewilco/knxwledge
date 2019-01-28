@@ -1,64 +1,63 @@
 export class LinkedList<T> {
   constructor(payload?: T) {
     if (payload) {
-      this.first = new ListNode(payload);
+      this.head = new ListNode(payload);
     } else {
-      this.first = null;
+      this.head = null;
     }
   }
 
-  private first?: ListNode<T>;
+  private head: ListNode<T> | null;
 
   private getLastNode(): ListNode<T> | null {
-    if (this.first === null) {
+    if (this.head === null) {
       return null;
     }
 
-    let current: ListNode<T> = this.first;
+    let current: ListNode<T> = this.head;
 
-    if (current.next) {
-      while (current.next !== null) {
-        current = current.next;
-      }
+    while (current.next !== null) {
+      current = current.next;
     }
 
     return current;
   }
 
   public size(): number {
-    if (this.first === null) {
+    let count: number = 0;
+
+    if (this.head === null) {
       return 0;
     }
 
-    let current: ListNode<T> = this.first;
-    let count: number = 0;
+    let current: ListNode<T> = this.head;
+    count++;
 
-    if (current.next) {
-      while (current.next !== null) {
-        current = current.next;
-        count++;
-      }
+    while (current.next !== null) {
+      current = current.next;
+      count++;
     }
 
     return count;
   }
 
   public addToTail(payload: T) {
-    if (this.first) {
+    if (this.head !== null) {
       const last: ListNode<T> = this.getLastNode();
 
       last.next = new ListNode(payload);
     } else {
-      this.first = new ListNode(payload);
+      this.head = new ListNode(payload);
     }
   }
 
-  public getByIndex(idx: number): ListNode<T> | Error {
+  public getByIndex(idx: number): ListNode<T> {
     if (idx >= this.size()) {
-      return new Error("Tooooooo much");
+      throw new Error("Tooooooo much");
     }
-    if (this.first !== null) {
-      let current: ListNode<T> = this.first;
+
+    if (this.head !== null) {
+      let current: ListNode<T> = this.head;
       let count: number = 0;
 
       while (current.next !== null && count !== idx) {
@@ -71,12 +70,18 @@ export class LinkedList<T> {
   }
 }
 
-export class ListNode<T> {
+interface INode<T> {
+  next: INode<T> | null;
+  payload: T;
+}
+
+export class ListNode<T> implements INode<T> {
   constructor(payload: T) {
     this.payload = payload;
+    this.next = null;
   }
 
-  public next: ListNode<T>;
+  public next: INode<T> | null;
 
   public payload: T;
 }

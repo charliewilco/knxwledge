@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "pretest": "tsc",
     "test": "jest"
   },
   "devDependencies": {

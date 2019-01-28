@@ -1,14 +1,20 @@
-import { LinkedList } from "../src/linked-list";
+import { LinkedList, ListNode } from "../src/linked-list";
+
+var linkedList = new LinkedList<number>(1);
+
+linkedList.addToTail(2);
+linkedList.addToTail(3);
 
 describe("Linked List", () => {
+  it("has index", () => {
+    const n: ListNode<number> = linkedList.getByIndex(1);
+
+    expect(n.payload).toEqual(2);
+  });
+
   it("has size", () => {
-    var linkedList = new LinkedList<number>(1);
+    const size = linkedList.size();
 
-    linkedList.addToTail(2);
-    linkedList.addToTail(3);
-
-    console.log(linkedList);
-
-    expect(linkedList.getByIndex(1)).toEqual(3);
+    expect(size).toEqual(3);
   });
 });

@@ -1,5 +1,5 @@
 // TODO: Find something that doesn't mutate
-function swap<T>(arr: T[], i: number, j: number) {
+export function swap<T>(arr: T[], i: number, j: number) {
   var temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
