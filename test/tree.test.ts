@@ -10,5 +10,6 @@ describe("Tree", () => {
 
   it("can insert", () => {
     expect(t.contains(7)).toBeTruthy();
+    expect(t.left).toBeNull();
   });
 });
