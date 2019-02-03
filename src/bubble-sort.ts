@@ -15,7 +15,7 @@ export function bubbleSort<T>(array: T[]): T[] {
   return array;
 }
 
-export function betterBubbling(array) {
+export function betterBubbling<T>(array: T[]): T[] {
   // Creates a clone of the array
   array = array.slice();
 

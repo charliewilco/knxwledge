@@ -53,7 +53,7 @@ export class LinkedList<T> {
     }
   }
 
-  public getByIndex(idx: number): ListNode<T> {
+  public getByIndex(idx: number): ListNode<T> | void {
     if (idx >= this.size()) {
       throw new Error("Tooooooo much");
     }

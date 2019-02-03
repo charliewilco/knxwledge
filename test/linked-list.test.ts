@@ -1,4 +1,4 @@
-import { LinkedList, ListNode } from "../src/linked-list";
+import { LinkedList, ListNode } from "../src";
 
 var linkedList = new LinkedList<number>(1);
 
@@ -7,7 +7,7 @@ linkedList.addToTail(3);
 
 describe("Linked List", () => {
   it("has index", () => {
-    const n: ListNode<number> = linkedList.getByIndex(1);
+    const n = linkedList.getByIndex(1) as ListNode<number>;
 
     expect(n.payload).toEqual(2);
   });

@@ -1,4 +1,4 @@
-import { Tree } from "../src/tree";
+import { Tree } from "../src";
 
 const t = new Tree<number>(5);
 t.insert(7);

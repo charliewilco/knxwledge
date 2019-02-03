@@ -1,4 +1,4 @@
-import * as Quick from "../src/quick-sort";
+import * as Quick from "../src";
 
 describe("Quick sort", () => {
   it("sorts numbers", () => {
