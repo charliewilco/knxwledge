@@ -1,29 +1,63 @@
-// FILO
+export class Node<T> {
+  constructor(data: T) {
+    this.data = data;
+  }
+  public data: T;
+  public next: Node<T> | null;
+}
+
+// FIFO
 export class Queue<T> {
-  constructor() {
-    this.list = [];
-    this.length = 0;
+  private head: Node<T> | null;
+  private tail: Node<T> | null;
+  private length: number;
+
+  constructor(initialPayload?: T) {
+    if (initialPayload) {
+      this.head = new Node(initialPayload);
+    }
   }
 
-  list: T[];
-  length: number;
-
-  public enqueue(value: T): void {
-    this.length++;
-    this.list.push(value);
+  public isEmpty(): boolean {
+    return this.head === null;
   }
 
-  public dequeue(): T | void {
-    if (this.length === 0) return;
-
-    this.length--;
-    return this.list.shift();
+  public peek() {
+    if (this.head !== null) {
+      return this.head.data;
+    }
+    throw new Error("Tooooooo much");
   }
 
-  public peek(): T {
-    return this.list[0];
+  public add(value: T): void {
+    const n = new Node(value);
+    if (this.isEmpty()) {
+      this.head = n;
+    }
+
+    if (this.tail !== null) {
+      this.tail.next = n;
+    }
+    this.tail = n;
+  }
+
+  public remove() {
+    const data = this.head.data;
+    this.head = this.head.next;
+
+    if (this.head === null) {
+      this.tail = null;
+    }
+
+    return data;
   }
 }
 
 // LIFO
-// export class Stack<T> {}
+export class Stack<T> {
+  constructor(data: T) {
+    this.head = new Node(data);
+  }
+  private head: Node<T> | null;
+  private tail: Node<T> | null;
+}
