@@ -11,7 +11,7 @@ Check out the `test` directory for implementations.
 Clone the project:
 
 ```sh
-git clone https://github.com/charliewilco/data-structures-algorithms-workspace.git
+git clone https://github.com/charliewilco/data-structures-algorithms.git
 ```
 
 Install the dependencies:
