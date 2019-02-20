@@ -8,3 +8,5 @@ export * from "./linked-list";
 export * from "./tree";
 export * from "./stack-queue";
 export * from "./vector";
+
+export * from "./event-emitter";
