@@ -27,6 +27,39 @@ export class EventEmitter {
   }
 }
 
+export function fnEmitterMap() {
+  const events = new Map<Function, string>();
+
+  const subscribe = (name: string, fn: Function) => {
+    events.set(fn, name);
+    return {
+      release: () => events.delete(fn)
+    };
+  };
+
+  const emit = (name: string, data: any) => {
+    events.forEach((value, key) => {
+      if (value === name) {
+        key(data);
+      }
+    });
+  };
+
+  const getValues = (): string[] => {
+    const values: string[] = [];
+    for (var [key, value] of events.entries()) {
+      values.push(value);
+    }
+    return values;
+  };
+
+  return {
+    getEventNames: getValues,
+    subscribe,
+    emit
+  };
+}
+
 export function fnEmitter(e?: Events) {
   let events: Events = e || {};
 

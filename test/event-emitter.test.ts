@@ -1,4 +1,4 @@
-import { EventEmitter, fnEmitter } from "../src";
+import { EventEmitter, fnEmitter, fnEmitterMap } from "../src";
 
 const mock = jest.fn();
 
@@ -101,6 +101,61 @@ describe("Event Emitter Function", () => {
     m.emit("mock event", 18);
     expect(val).not.toBe(18);
     expect(m.events["mock event"]).toHaveLength(0);
+  });
+
+  xit("fires event", () => {});
+});
+
+describe("Event Emitter  with a Map", () => {
+  it("emits result when fired", () => {
+    const m = fnEmitterMap();
+    let val = 0;
+
+    m.subscribe("count", (n: number) => (val = n));
+    m.emit("count", 18);
+
+    expect(val).toBe(18);
+  });
+
+  it("contains event names", () => {
+    const m = fnEmitterMap();
+
+    m.subscribe("mock event", mock);
+    m.subscribe("other mock event", () => jest.fn());
+
+    const events = m.getEventNames();
+
+    console.log(events);
+
+    expect(events).toContain("mock event");
+    expect(events).toContain("other mock event");
+  });
+
+  it("fires call back when emitted", () => {
+    const m = fnEmitterMap();
+    let val = 0;
+
+    m.subscribe("mock event", (n: number) => mock(n));
+    m.emit("mock event", 18);
+
+    expect(mock).toHaveBeenCalled();
+  });
+
+  it("unsubscribes from event", () => {
+    const m = fnEmitterMap();
+
+    let val = 0;
+
+    const e = m.subscribe("mock event", (n: number) => (val = n));
+    m.subscribe("other mock event", mock);
+    m.emit("mock event", 10);
+    expect(val).toBe(10);
+
+    e.release();
+
+    m.emit("mock event", 18);
+    expect(val).not.toBe(18);
+    expect(m.getEventNames()).not.toContain("mock event");
   });
 
   xit("fires event", () => {});
