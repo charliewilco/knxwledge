@@ -10,3 +10,4 @@ export * from "./stack-queue";
 export * from "./vector";
 
 export * from "./event-emitter";
+export * from "./memoize";

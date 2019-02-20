@@ -125,8 +125,6 @@ describe("Event Emitter  with a Map", () => {
 
     const events = m.getEventNames();
 
-    console.log(events);
-
     expect(events).toContain("mock event");
     expect(events).toContain("other mock event");
   });
