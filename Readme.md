@@ -1,6 +1,6 @@
 # Data Structures & Algorithms
 
-[![Build Status](https://travis-ci.com/charliewilco/data-structures-algorithms-workspace.svg?branch=master)](https://travis-ci.com/charliewilco/data-structures-algorithms-workspace)
+[![Build Status](https://travis-ci.com/charliewilco/data-structures-algorithms.svg?branch=master)](https://travis-ci.com/charliewilco/data-structures-algorithms)
 
 Workspace to write, test and understand basic CS concepts like data structures and algorithms in TypeScript.
 
