@@ -8,24 +8,25 @@ export class Node<T> {
 
 // FIFO
 export class Queue<T> {
-  private head: Node<T> | null;
-  private tail: Node<T> | null;
+  private head: Node<T> | null = null;
+  private tail: Node<T> | null = null;
   private length: number;
 
   constructor(initialPayload?: T) {
-    if (initialPayload) {
-      this.head = new Node(initialPayload);
-    }
+    if (initialPayload) this.head = new Node(initialPayload);
   }
 
   public isEmpty(): boolean {
     return this.head === null;
   }
 
-  public peek() {
+  public peek(): T {
     if (this.head !== null) {
+      console.log(this.head);
+
       return this.head.data;
     }
+
     throw new Error("Tooooooo much");
   }
 
@@ -41,13 +42,14 @@ export class Queue<T> {
     this.tail = n;
   }
 
-  public remove() {
-    const data = this.head.data;
-    this.head = this.head.next;
-
+  public remove(): T {
     if (this.head === null) {
       this.tail = null;
+      throw new Error("Nothing to remove");
     }
+    const { data, next } = this.head;
+
+    this.head = next;
 
     return data;
   }
