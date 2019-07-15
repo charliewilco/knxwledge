@@ -1,8 +1,8 @@
 import { Stack, Queue } from "../src";
 
-describe("Stack", () => {});
+xdescribe("Stack", () => {});
 
-describe("Queue", () => {
+xdescribe("Queue", () => {
   it("Peek returns head", () => {
     const q = new Queue(4);
 
