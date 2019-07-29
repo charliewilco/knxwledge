@@ -8,7 +8,7 @@
       "type": "node",
       "name": "Jest",
       "request": "launch",
-      "args": ["--runInBand"],
+      "args": ["--runInBand", "--verbose"],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
