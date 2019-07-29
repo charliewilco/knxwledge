@@ -1,6 +1,6 @@
 import { Stack, Queue } from "../src";
 
-xdescribe("Stack", () => {});
+describe("Stack", () => {});
 
 xdescribe("Queue", () => {
   it("Peek returns head", () => {
@@ -24,6 +24,7 @@ xdescribe("Queue", () => {
 
   it("removes", () => {
     const q = new Queue(4);
+    console.log(q.head);
     q.add(5);
     q.remove();
     expect(q.peek()).toBe(5);

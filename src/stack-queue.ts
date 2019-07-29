@@ -8,8 +8,8 @@ export class Node<T> {
 
 // FIFO
 export class Queue<T> {
-  private head: Node<T> | null = null;
-  private tail: Node<T> | null = null;
+  public head: Node<T> | null = null;
+  public tail: Node<T> | null = null;
   private length: number;
 
   constructor(initialPayload?: T) {
@@ -22,8 +22,6 @@ export class Queue<T> {
 
   public peek(): T {
     if (this.head !== null) {
-      console.log(this.head);
-
       return this.head.data;
     }
 
@@ -31,15 +29,14 @@ export class Queue<T> {
   }
 
   public add(value: T): void {
-    const n = new Node(value);
     if (this.isEmpty()) {
-      this.head = n;
+      this.head = new Node(value);
     }
 
     if (this.tail !== null) {
-      this.tail.next = n;
+      this.tail.next = new Node(value);
     }
-    this.tail = n;
+    this.tail = new Node(value);
   }
 
   public remove(): T {
