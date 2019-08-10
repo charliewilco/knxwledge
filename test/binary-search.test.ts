@@ -1,4 +1,4 @@
-import search from "../src/binary-search";
+import { binarySearch as search } from "../src";
 
 const items = [0, 1, 4, 13, 17, 24, 31, 45, 62, 75, 81, 96];
 

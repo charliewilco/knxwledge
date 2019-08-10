@@ -1,4 +1,4 @@
-export default function evalRPNotation(notationString: string): number {
+export function evalRPNotation(notationString: string): number {
   const operationTuple: number[] = [];
   const splitInput: string[] = notationString.split(" ");
 
@@ -51,7 +51,7 @@ export default function evalRPNotation(notationString: string): number {
   if (operationTuple.length > 1) {
     // At this point we should've reduced all the items in the array to a single integer.
     throw new Error("Something went wrong");
-  } else {
-    return operationTuple.pop();
   }
+
+  return operationTuple.pop()!;
 }

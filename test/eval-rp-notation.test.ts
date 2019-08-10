@@ -1,4 +1,4 @@
-import evalRPNotation from "../src/eval-reverse-polish-notation";
+import { evalRPNotation } from "../src";
 
 describe("Eval Reverse Polish Notation", () => {
   it("test case 1", () => {

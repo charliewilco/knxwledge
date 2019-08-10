@@ -11,7 +11,7 @@ export function isSorted<T>(list: T[]): boolean {
   return val;
 }
 
-export default function binarySearch<T>(list: T[], item: T): number {
+export function binarySearch<T>(list: T[], item: T): number {
   if (list.length <= 0) {
     throw new Error("list has no items");
   }
@@ -22,7 +22,7 @@ export default function binarySearch<T>(list: T[], item: T): number {
 
   let low = 0;
   let high = list.length - 1;
-  let mid;
+  let mid: number;
 
   while (low <= high) {
     mid = low + high;

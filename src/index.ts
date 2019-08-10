@@ -2,6 +2,9 @@
 export * from "./bubble-sort";
 export * from "./quick-sort";
 export * from "./merge-sort";
+export * from "./binary-search";
+export * from "./eval-reverse-polish-notation";
+export * from "./fisher-yates";
 
 // Data Structures
 export * from "./linked-list";

@@ -19,11 +19,21 @@ export function merge<T>(left: T[], right: T[]): T[] {
 
   while (left.length > 0 && right.length > 0) {
     if (left[0] <= right[0]) {
-      result.push(left.shift());
+      const item = left.shift();
+      if (item) {
+        result.push(item);
+      }
     } else {
-      result.push(right.shift());
+      const item = right.shift();
+      if (item) {
+        result.push(item);
+      }
     }
   }
 
-  return result.concat(left, right);
+  if (left !== undefined && right !== undefined) {
+    return result.concat(left, right!);
+  } else {
+    throw new Error("last item is undefined");
+  }
 }
