@@ -33,14 +33,14 @@ export class ModernShuffle<T> {
     return clone;
   }
 
-  public checkThresholds(): boolean {
+  public checkThresholds(): number {
     const report = this.resultDetails;
     let passes = 0;
     this._thresholds.forEach(threshold => {
       report.count > report.potential * threshold && ++passes;
     });
 
-    return passes > this._thresholds.length - 1;
+    return passes;
   }
 
   public generateReport(): IShuffledReport {

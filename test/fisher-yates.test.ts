@@ -11,7 +11,7 @@ describe("Shuffle", () => {
   it("passes check and exceeds thresholds", () => {
     expect(shuffle.resultDetails.passes).toBeTruthy();
 
-    expect(shuffle.checkThresholds()).toBeTruthy();
+    expect(shuffle.checkThresholds()).toBeGreaterThan(1);
   });
 
   it("contains different items", () => {
