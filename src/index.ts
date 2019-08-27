@@ -13,4 +13,5 @@ export * from "./stack-queue";
 export * from "./vector";
 
 export * from "./event-emitter";
+export * from "./lodash-like";
 export * from "./memoize";
