@@ -42,15 +42,11 @@ export class _ {
 
   public static get<T>(data: any, path: string): T | undefined {
     const keys = _.getPath(path);
-    let current: T;
-
-    console.log(keys);
+    let current = data;
 
     while (keys.length > 0) {
       const key: string = keys.shift();
-      const item: any = data[key];
-
-      console.log(item);
+      const item: any = current[key];
 
       current = item;
 
