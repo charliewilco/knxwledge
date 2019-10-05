@@ -17,22 +17,27 @@ const KEY = {
   M: 1000
 };
 
-export function getIntfromNumeral(roman: string): number {
+export function getIntfromNumeral(roman: string): number | void {
   const criteria: RegExp = RegExp(/[I|V|X|L|C|D|M]/gm);
 
-  if (criteria.test(roman)) {
-    const split: NumeralID[] = roman.split("") as NumeralID[];
-    let count: number = 0;
-
-    for (let index = 0; index < split.length; index++) {
-      const current: number = KEY[split[index]];
-      const next: number = KEY[split[index + 1]];
-
-      next && next > current ? (count -= current) : (count += current);
-    }
-    console.log(count);
-    return count;
+  if (!criteria.test(roman)) {
+    throw new Error(`Input: ${roman} was not a Roman numeral`);
+    return;
   }
 
-  throw new Error(`Input: ${roman} was not a Roman numeral`);
+  const split: NumeralID[] = roman.split("") as NumeralID[];
+  let count: number = 0;
+
+  for (let index = 0; index < split.length; index++) {
+    const current: number = KEY[split[index]];
+    const next: number = KEY[split[index + 1]];
+
+    if (current === undefined) {
+      throw new Error(`Input: ${roman} was not a Roman numeral`);
+    }
+
+    next && next > current ? (count -= current) : (count += current);
+  }
+
+  return count;
 }
