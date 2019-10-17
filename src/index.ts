@@ -15,4 +15,5 @@ export * from "./vector";
 
 export * from "./event-emitter";
 export * from "./lodash-like";
+export * from "./character-counter";
 export * from "./memoize";
