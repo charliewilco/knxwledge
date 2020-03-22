@@ -1,13 +1,9 @@
 export default function anagramDetector(input: string[]): string[] {
-  const prev = new Map();
+  const prev = new Map<number, string[]>();
   const result = new Set<string>();
 
   function createComparison(s: string): string {
-    return s
-      .split("")
-      .sort()
-      .join("")
-      .toUpperCase();
+    return s.split("").sort().join("").toUpperCase();
   }
 
   for (let i = 0; i < input.length; i++) {
@@ -23,7 +19,7 @@ export default function anagramDetector(input: string[]): string[] {
         }
       });
 
-      prev.set(input[i].length, [...lengthMatches, input[i]]);
+      lengthMatches.push(input[i]);
     } else {
       prev.set(input[i].length, [input[i]]);
     }
