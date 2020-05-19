@@ -18,3 +18,5 @@ export * from "./lodash-like";
 export * from "./character-counter";
 export * from "./longest-sequence";
 export * from "./memoize";
+
+export * from "./repeated-string";
