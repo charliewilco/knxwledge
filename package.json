@@ -9,18 +9,19 @@
     "test": "jest --verbose"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.2",
-    "@types/node": "^13.9.2",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.23",
     "husky": "^4.2.5",
-    "jest": "^25.5.4",
+    "jest": "^26.1.0",
     "lint-staged": "^10.2.3",
     "prettier": "^2.0.5",
-    "ts-jest": "^25.5.1",
+    "ts-jest": "^26.1.2",
     "ts-node": "^8.10.1",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.7"
   },
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
   "prettier": {
     "printWidth": 85,

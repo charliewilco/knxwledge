@@ -1,10 +1,8 @@
 export function debounce(fn: Function, wait: number, immediate: boolean = false) {
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: any = null;
   return function runFn() {
     const args = arguments;
     const context = this;
-
-    console.log(wait);
 
     const later = () => {
       timeout = null;
@@ -15,7 +13,7 @@ export function debounce(fn: Function, wait: number, immediate: boolean = false)
 
     clearTimeout(timeout);
 
-    timeout = setTimeout(later, wait) as NodeJS.Timeout;
+    timeout = setTimeout(later, wait);
 
     if (callNow) fn.apply(context, args);
   };
