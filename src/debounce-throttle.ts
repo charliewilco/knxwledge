@@ -15,7 +15,7 @@ export function debounce(fn: Function, wait: number, immediate: boolean = false)
 
     clearTimeout(timeout);
 
-    timeout = setTimeout(later, wait);
+    timeout = setTimeout(later, wait) as NodeJS.Timeout;
 
     if (callNow) fn.apply(context, args);
   };
