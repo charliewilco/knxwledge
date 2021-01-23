@@ -5,7 +5,7 @@ import {
   urlify,
   containsPermutationPalindromes,
   oneAway,
-} from "../01-strings-arrays";
+} from "../src/laakman-mcdowell/01-strings-arrays";
 
 describe("1.1 isUnique", () => {
   it("LINEAR: can handle unique values", () => {

@@ -121,6 +121,5 @@ export function containsPermutationPalindromes(base: string): boolean {
 // NOT DONE
 export function oneAway(predicate: string, deviation: string): boolean {
   const n = predicate === deviation;
-  console.log(n);
-  return true;
+  return n || true;
 }
