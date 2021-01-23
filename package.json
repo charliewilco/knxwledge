@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test:ci": "jest --ci --runInBand --no-cache"
   },
   "devDependencies": {
     "@types/jest": "^26.0.4",
