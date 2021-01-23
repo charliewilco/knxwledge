@@ -4,8 +4,6 @@ export function debounce(fn: Function, wait: number, immediate: boolean = false)
     const args = arguments;
     const context = this;
 
-    console.log(wait);
-
     const later = () => {
       timeout = null;
       !immediate && fn.apply(context, args);

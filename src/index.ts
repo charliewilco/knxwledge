@@ -11,6 +11,7 @@ export * from "./roman-numerals";
 export * from "./linked-list";
 export * from "./tree";
 export * from "./stack-queue";
+export * from "./binary-search-tree";
 export * from "./vector";
 
 export * from "./event-emitter";
