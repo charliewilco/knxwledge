@@ -10,7 +10,7 @@
     "test:ci": "jest --ci --runInBand --no-cache"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^26.0.21",
     "@types/node": "^14.14.35",
     "husky": "^5.2.0",
     "jest": "^26.6.3",
