@@ -7,16 +7,17 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --verbose",
-    "test:ci": "jest --ci --runInBand --no-cache"
+    "test:ci": "jest --ci --runInBand --no-cache",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/jest": "^27.5.0",
+    "@types/jest": "^28.1.3",
     "@types/node": "^18.0.0",
-    "husky": "^7.0.2",
-    "jest": "^26.6.3",
-    "lint-staged": "^12.4.3",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "ts-jest": "^26.5.6",
+    "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"
   },
   "jest": {
