@@ -11,7 +11,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.3",
+    "@types/jest": "^28.1.4",
     "@types/node": "^18.0.0",
     "husky": "^8.0.1",
     "jest": "^28.1.2",
