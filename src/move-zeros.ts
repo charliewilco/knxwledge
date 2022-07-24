@@ -17,32 +17,32 @@ Constraints:
 */
 
 export function moveZerosBrute(arr: number[]): number[] {
-  const not = [];
-  let zeroCount = 0;
+	const not = [];
+	let zeroCount = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== 0) {
-      not.push(arr[i]);
-    } else {
-      zeroCount++;
-    }
-  }
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] !== 0) {
+			not.push(arr[i]);
+		} else {
+			zeroCount++;
+		}
+	}
 
-  return not.concat(Array(zeroCount).fill(0));
+	return not.concat(Array(zeroCount).fill(0));
 }
 
 export function moveZerosLessBad(arr: number[]) {
-  let index = 0;
+	let index = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== 0) {
-      arr[index++] = arr[i];
-    }
-  }
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] !== 0) {
+			arr[index++] = arr[i];
+		}
+	}
 
-  for (let i = index; i < arr.length; i++) {
-    arr[i] = 0;
-  }
+	for (let i = index; i < arr.length; i++) {
+		arr[i] = 0;
+	}
 
-  return arr;
+	return arr;
 }

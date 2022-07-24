@@ -15,17 +15,17 @@ git clone https://github.com/charliewilco/data-structures-algorithms.git
 Install the dependencies:
 
 ```sh
-yarn
+npm install
 ```
 
 Run development script
 
 ```sh
-yarn build -w
+npm run build -- -w
 ```
 
 Or run the tests (Jest)
 
 ```sh
-yarn test --verbose
+npm test
 ```

@@ -1,19 +1,19 @@
 interface IMemoizeCache {
-  [key: string]: any;
+	[key: string]: any;
 }
 
 // https://medium.freecodecamp.org/understanding-memoize-in-javascript-51d07d19430e
 export function memoize<T>(fn: Function): Function {
-  let cache: IMemoizeCache = {};
+	let cache: IMemoizeCache = {};
 
-  return (...args: any[]): T => {
-    let n = args[0];
-    if (n in cache) {
-      return cache[n];
-    } else {
-      let result = fn(n);
-      cache[n] = result;
-      return result;
-    }
-  };
+	return (...args: any[]): T => {
+		let n = args[0];
+		if (n in cache) {
+			return cache[n];
+		} else {
+			let result = fn(n);
+			cache[n] = result;
+			return result;
+		}
+	};
 }

@@ -1,89 +1,89 @@
 // https://hackernoon.com/the-little-guide-of-linked-list-in-javascript-9daf89b63b54
 
 export class LinkedList<T> {
-  constructor(payload?: T) {
-    if (payload) {
-      this.head = new ListNode(payload);
-    } else {
-      this.head = null;
-    }
-  }
+	constructor(payload?: T) {
+		if (payload) {
+			this.head = new ListNode(payload);
+		} else {
+			this.head = null;
+		}
+	}
 
-  private head: ListNode<T> | null;
+	private head: ListNode<T> | null;
 
-  private getLastNode(): ListNode<T> | null {
-    if (this.head === null) {
-      return null;
-    }
+	private getLastNode(): ListNode<T> | null {
+		if (this.head === null) {
+			return null;
+		}
 
-    let current: ListNode<T> = this.head;
+		let current: ListNode<T> = this.head;
 
-    while (current.next !== null) {
-      current = current.next;
-    }
+		while (current.next !== null) {
+			current = current.next;
+		}
 
-    return current;
-  }
+		return current;
+	}
 
-  public size(): number {
-    let count: number = 0;
+	public size(): number {
+		let count: number = 0;
 
-    if (this.head === null) {
-      return 0;
-    }
+		if (this.head === null) {
+			return 0;
+		}
 
-    let current: ListNode<T> = this.head;
-    count++;
+		let current: ListNode<T> = this.head;
+		count++;
 
-    while (current.next !== null) {
-      current = current.next;
-      count++;
-    }
+		while (current.next !== null) {
+			current = current.next;
+			count++;
+		}
 
-    return count;
-  }
+		return count;
+	}
 
-  public addToTail(payload: T) {
-    if (this.head !== null) {
-      const last: ListNode<T> = this.getLastNode();
+	public addToTail(payload: T) {
+		if (this.head !== null) {
+			const last: ListNode<T> = this.getLastNode();
 
-      last.next = new ListNode(payload);
-    } else {
-      this.head = new ListNode(payload);
-    }
-  }
+			last.next = new ListNode(payload);
+		} else {
+			this.head = new ListNode(payload);
+		}
+	}
 
-  public getByIndex(idx: number): ListNode<T> | void {
-    if (idx >= this.size()) {
-      throw new Error("Tooooooo much");
-    }
+	public getByIndex(idx: number): ListNode<T> | void {
+		if (idx >= this.size()) {
+			throw new Error("Tooooooo much");
+		}
 
-    if (this.head !== null) {
-      let current: ListNode<T> = this.head;
-      let count: number = 0;
+		if (this.head !== null) {
+			let current: ListNode<T> = this.head;
+			let count: number = 0;
 
-      while (current.next !== null && count !== idx) {
-        current = current.next;
-        count++;
-      }
+			while (current.next !== null && count !== idx) {
+				current = current.next;
+				count++;
+			}
 
-      return current;
-    }
-  }
+			return current;
+		}
+	}
 }
 
 interface INode<T> {
-  next: INode<T> | null;
-  payload: T;
+	next: INode<T> | null;
+	payload: T;
 }
 
 export class ListNode<T> implements INode<T> {
-  constructor(payload: T) {
-    this.payload = payload;
-    this.next = null;
-  }
+	constructor(payload: T) {
+		this.payload = payload;
+		this.next = null;
+	}
 
-  public next: INode<T> | null;
+	public next: INode<T> | null;
 
-  public payload: T;
+	public payload: T;
 }

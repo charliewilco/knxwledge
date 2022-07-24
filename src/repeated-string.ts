@@ -33,31 +33,31 @@ Print a single integer denoting the number of letter a's in the first  letters o
 //
 
 export function repeatedString(predicate: string, repeatedLimit: number) {
-  const reducer = (acc: number, val: string): number => {
-    const assertion = val === "a";
+	const reducer = (acc: number, val: string): number => {
+		const assertion = val === "a";
 
-    if (assertion) {
-      acc++;
-    }
-    return acc;
-  };
+		if (assertion) {
+			acc++;
+		}
+		return acc;
+	};
 
-  if (repeatedLimit < predicate.length) {
-    const letters = predicate.substr(0, repeatedLimit).split("");
+	if (repeatedLimit < predicate.length) {
+		const letters = predicate.substr(0, repeatedLimit).split("");
 
-    return letters.reduce(reducer, 0);
-  }
+		return letters.reduce(reducer, 0);
+	}
 
-  const wholeTimes = Math.floor(repeatedLimit / predicate.length);
-  const remainder = repeatedLimit % predicate.length;
+	const wholeTimes = Math.floor(repeatedLimit / predicate.length);
+	const remainder = repeatedLimit % predicate.length;
 
-  const letters = predicate.split("");
-  const remainingLetters = predicate.substr(0, remainder).split("");
+	const letters = predicate.split("");
+	const remainingLetters = predicate.substr(0, remainder).split("");
 
-  const occurences = letters.reduce(reducer, 0);
-  const remainingOcc = remainingLetters.reduce(reducer, 0);
+	const occurences = letters.reduce(reducer, 0);
+	const remainingOcc = remainingLetters.reduce(reducer, 0);
 
-  const value = occurences * wholeTimes + remainingOcc;
+	const value = occurences * wholeTimes + remainingOcc;
 
-  return value;
+	return value;
 }
