@@ -1,11 +1,7 @@
-interface IReport {
-	[key: string]: number;
-}
-
-export function charFreq(sentence: string): IReport {
+export function charFreq(sentence: string): Record<string, number> {
 	const letter = /^[A-Za-z]*$/;
 
-	let map: IReport = {};
+	let map: Record<string, number> = {};
 
 	for (let char of sentence) {
 		if (letter.test(char)) {

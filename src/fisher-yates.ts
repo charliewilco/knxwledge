@@ -1,4 +1,4 @@
-export interface IShuffledReport {
+export interface ShuffledReport {
 	count: number;
 	potential: number;
 	passes: boolean;
@@ -9,7 +9,7 @@ export class ModernShuffle<T> {
 	private _input: T[];
 	private _thresholds: number[] = [0.25, 0.5, 0.75];
 	public result: T[];
-	public resultDetails: IShuffledReport;
+	public resultDetails: ShuffledReport;
 	public static mockData: number[] = [9, 8, 7, 3, 4, 6, 2, 5, 1];
 
 	constructor(input: T[]) {
@@ -43,7 +43,7 @@ export class ModernShuffle<T> {
 		return passes;
 	}
 
-	public generateReport(): IShuffledReport {
+	public generateReport(): ShuffledReport {
 		let count: number = 0;
 		let indexes: number[] = [];
 		this._input.forEach((item, i) => {

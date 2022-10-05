@@ -1,10 +1,10 @@
-interface ITree<T> {
+interface TreeLike<T> {
 	root: T;
-	left: ITree<T> | null;
-	right: ITree<T> | null;
+	left: TreeLike<T> | null;
+	right: TreeLike<T> | null;
 }
 
-export class Tree<T> implements ITree<T> {
+export class Tree<T> implements TreeLike<T> {
 	constructor(payload: T) {
 		this.root = payload;
 		this.left = null;

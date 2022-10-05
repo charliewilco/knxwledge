@@ -11,7 +11,7 @@ class TreeNode<T> {
 	}
 }
 
-export class BSTree<T> {
+export class BinarySearchTree<T> {
 	private _size: number = 0;
 	public root: TreeNode<T>;
 

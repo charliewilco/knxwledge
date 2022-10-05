@@ -1,6 +1,4 @@
-type A<T> = T[];
-
-export function mergeSortRecursive<T>(arr: A<T>): A<T> {
+export function mergeSortRecursive<T>(arr: T[]): T[] {
 	if (arr.length <= 1) {
 		return arr;
 	}

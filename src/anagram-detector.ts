@@ -1,4 +1,4 @@
-export default function anagramDetector(input: string[]): string[] {
+export function anagramDetector(input: string[]): string[] {
 	const prev = new Map<number, string[]>();
 	const result = new Set<string>();
 

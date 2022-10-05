@@ -72,18 +72,18 @@ export class LinkedList<T> {
 	}
 }
 
-interface INode<T> {
-	next: INode<T> | null;
+interface Node<T> {
+	next: Node<T> | null;
 	payload: T;
 }
 
-export class ListNode<T> implements INode<T> {
+export class ListNode<T> implements Node<T> {
 	constructor(payload: T) {
 		this.payload = payload;
 		this.next = null;
 	}
 
-	public next: INode<T> | null;
+	public next: Node<T> | null;
 
 	public payload: T;
 }
