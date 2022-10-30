@@ -6,15 +6,15 @@ linkedList.addToTail(2);
 linkedList.addToTail(3);
 
 describe("Linked List", () => {
-  it("has index", () => {
-    const n = linkedList.getByIndex(1) as ListNode<number>;
+	test("has index", () => {
+		const n = linkedList.getByIndex(1) as ListNode<number>;
 
-    expect(n.payload).toEqual(2);
-  });
+		expect(n.payload).toEqual(2);
+	});
 
-  it("has size", () => {
-    const size = linkedList.size();
+	test("has size", () => {
+		const size = linkedList.size();
 
-    expect(size).toEqual(3);
-  });
+		expect(size).toEqual(3);
+	});
 });

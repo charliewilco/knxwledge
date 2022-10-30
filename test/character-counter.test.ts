@@ -1,7 +1,7 @@
 import { charFreq } from "../src";
 
 describe("Character Frequency", () => {
-  it("Simple use cases", () => {
+  test("Simple use cases", () => {
     const simple = charFreq("Charles Peters!");
 
     expect(simple.e).toEqual(3);
@@ -11,14 +11,14 @@ describe("Character Frequency", () => {
     expect(simple["!"]).toBeUndefined();
   });
 
-  it("excludes numbers", () => {
+  test("excludes numbers", () => {
     const longer = charFreq("Charles Peters, the star child, born 1991");
 
     expect(longer["1"]).toBeUndefined();
     expect(longer["9"]).toBeUndefined();
   });
 
-  it("ignores casing", () => {
+  test("ignores casing", () => {
     const casing = charFreq(
       "Charles Peters Reads Books! But not by battlestar galatica fans"
     );
