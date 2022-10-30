@@ -1,4 +1,4 @@
-# Data Structures & Algorithms
+# Knxwledge
 
 Workspace to write, test and understand basic CS concepts like data structures and algorithms in TypeScript.
 
@@ -9,7 +9,7 @@ Check out the `test` directory for implementations.
 Clone the project:
 
 ```sh
-git clone https://github.com/charliewilco/data-structures-algorithms.git
+git clone https://github.com/charliewilco/knxwledge.git
 ```
 
 Install the dependencies:

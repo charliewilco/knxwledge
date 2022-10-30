@@ -1,20 +1,20 @@
 {
-  "compilerOptions": {
-    "lib": ["es2016"],
-    "module": "commonjs",
-    "target": "es6",
-    "moduleResolution": "node",
-    "declaration": true,
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedParameters": true,
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"]
-    }
-  },
-  "include": ["types/*", "src/**/*"],
-  "exclude": ["dist", "docs"]
+	"compilerOptions": {
+		"lib": ["es2016"],
+		"module": "commonjs",
+		"target": "es6",
+		"moduleResolution": "node",
+		"declaration": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		"baseUrl": ".",
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noUnusedParameters": true,
+		"paths": {
+			"*": ["node_modules/*", "src/types/*"]
+		}
+	},
+	"include": ["types/*", "src/**/*"],
+	"exclude": ["dist", "docs"]
 }

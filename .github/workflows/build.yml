@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Test
-        run: npm run test:ci -- --coverage
+        run: npm test -- --ci --runInBand --no-cache --coverage

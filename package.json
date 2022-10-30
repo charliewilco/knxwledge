@@ -1,5 +1,5 @@
 {
-	"name": "@charliewilco/data-structures-algorithms",
+	"name": "@charliewilco/knxwledge",
 	"version": "1.0.0",
 	"license": "Unlicense",
 	"files": [
@@ -11,8 +11,7 @@
 	"scripts": {
 		"build": "rollup -c",
 		"dev": "tsc --noEmit --pretty --watch",
-		"test": "jest --verbose",
-		"test:ci": "jest --ci --runInBand --no-cache"
+		"test": "jest --verbose"
 	},
 	"devDependencies": {
 		"@types/jest": "^29.2.0",
