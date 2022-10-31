@@ -5,12 +5,7 @@ export function swap<T>(arr: T[], i: number, j: number) {
 	arr[j] = temp;
 }
 
-export function partition<T>(
-	arr: T[],
-	pivot: number,
-	left: number,
-	right: number
-): number {
+export function partition<T>(arr: T[], pivot: number, left: number, right: number): number {
 	var pivotValue = arr[pivot],
 		partitionIndex = left;
 

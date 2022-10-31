@@ -19,9 +19,7 @@ describe("Character Frequency", () => {
 	});
 
 	test("ignores casing", () => {
-		const casing = charFreq(
-			"Charles Peters Reads Books! But not by battlestar galatica fans"
-		);
+		const casing = charFreq("Charles Peters Reads Books! But not by battlestar galatica fans");
 		expect(casing.r).toEqual(4);
 		expect(casing.b).toEqual(4);
 	});
