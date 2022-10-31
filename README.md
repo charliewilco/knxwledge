@@ -1,5 +1,8 @@
 # Knxwledge
 
+![example workflow](https://github.com/charliewilco/knxwledge/actions/workflows/build.yml/badge.svg)
+
+
 Workspace to write, test and understand basic CS concepts like data structures and algorithms in TypeScript.
 
 Check out the `test` directory for implementations.
