@@ -16,7 +16,7 @@
 	"devDependencies": {
 		"@types/jest": "^29.2.6",
 		"@types/node": "^18.11.18",
-		"tsup": "^5.9.0",
+		"tsup": "^6.5.0",
 		"jest": "^29.3.1",
 		"prettier": "^2.8.3",
 		"ts-jest": "^29.0.5",
