@@ -44,11 +44,12 @@
 	},
 	"tsup": {
 		"entryPoints": [
-			"src/index.ts",
 			"src/ds.ts",
-			"src/sorting.ts",
+			"src/index.ts",
+			"src/js.ts",
 			"src/problems.ts",
-			"src/js.ts"
+			"src/search.ts",
+			"src/sorting.ts"
 		],
 		"sourcemap": true,
 		"clean": true,
