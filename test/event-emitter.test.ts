@@ -1,4 +1,4 @@
-import { EventEmitter, fnEmitter, fnEmitterMap } from "../src";
+import { EventEmitter, fnEmitter, fnEmitterMap } from "../src/javascript/event-emitter";
 
 const mock = jest.fn();
 

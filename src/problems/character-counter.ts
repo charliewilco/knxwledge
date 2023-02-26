@@ -1,4 +1,4 @@
-export function charFreq(sentence: string): Record<string, number> {
+export function countCharacterFrequency(sentence: string): Record<string, number> {
 	const letter = /^[A-Za-z]*$/;
 
 	let map: Record<string, number> = {};

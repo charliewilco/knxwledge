@@ -1,4 +1,4 @@
-import { memoize } from "../src";
+import { memoize } from "../src/javascript/memoize";
 
 const add = jest.fn((n: number): number => n + 10);
 
