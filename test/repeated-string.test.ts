@@ -1,4 +1,4 @@
-import { repeatedString } from "../src";
+import { repeatedString } from "../src/problems/repeated-string";
 
 describe("Repeated string", () => {
 	test("large limits", () => {

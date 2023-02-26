@@ -1,3 +1,23 @@
+/**
+ * Reverse Polish Notation (RPN) is a mathematical notation in which operators follow their operands.
+ * This notation is also known as postfix notation. In RPN, instead of using parentheses to indicate
+ * the order of operations, the operator is written after its operands, so the expression "2 + 3"
+ * would be written as "2 3 +". RPN is used in some calculators and programming languages, such as
+ * Forth and PostScript, because it is simpler to parse than infix notation.
+ *
+ * RPN expressions can be evaluated using a stack. Each operand is pushed onto the stack, and when
+ * an operator is encountered, the top elements are popped off the stack, the operation is performed,
+ * and the result is pushed back onto the stack. This process continues until the entire expression
+ * has been evaluated, and the final result is the last element on the stack.
+ *
+ * For example, to evaluate the RPN expression "2 3 + 4 *", we would first push 2 and 3 onto the stack.
+ * When we encounter the "+" operator, we pop 3 and 2 off the stack, add them together to get 5, and
+ * push 5 back onto the stack. We then push 4 onto the stack. When we encounter the "*" operator, we
+ * pop 4 and 5 off the stack, multiply them together to get 20, and push 20 back onto the stack. The
+ * final result is 20, which is the last element on the stack.
+ *
+ * @param notationString - The string to evaluate
+ */
 export function evalRPNotation(notationString: string): number {
 	const operationTuple: number[] = [];
 	const splitInput: string[] = notationString.split(" ");

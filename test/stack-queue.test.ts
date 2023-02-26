@@ -1,4 +1,4 @@
-import { Queue } from "../src";
+import { Queue } from "../src/ds/stack-queue";
 
 describe("Stack", () => {});
 
