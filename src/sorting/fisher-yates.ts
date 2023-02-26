@@ -5,7 +5,7 @@ export interface ShuffledReport {
 	indexes: number[];
 }
 
-export class ModernShuffle<T> {
+export class FisherYatesShuffle<T> {
 	private _input: T[];
 	private _thresholds: number[] = [0.25, 0.5, 0.75];
 	public result: T[];

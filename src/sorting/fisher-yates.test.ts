@@ -1,11 +1,11 @@
-import { ModernShuffle, ShuffledReport } from "./fisher-yates";
+import { FisherYatesShuffle, ShuffledReport } from "./fisher-yates";
 
-const shuffle = new ModernShuffle(ModernShuffle.mockData);
+const shuffle = new FisherYatesShuffle(FisherYatesShuffle.mockData);
 const report: ShuffledReport = shuffle.generateReport();
 
 describe("Shuffle", () => {
 	test("randomized items array and initial array lengths equal", () => {
-		expect(ModernShuffle.mockData.length).toEqual(shuffle.result.length);
+		expect(FisherYatesShuffle.mockData.length).toEqual(shuffle.result.length);
 	});
 
 	test("passes check and exceeds thresholds", () => {
@@ -16,7 +16,7 @@ describe("Shuffle", () => {
 
 	test("contains different items", () => {
 		report.indexes.forEach((i) => {
-			expect(shuffle.result[i]).not.toEqual(ModernShuffle.mockData[i]);
+			expect(shuffle.result[i]).not.toEqual(FisherYatesShuffle.mockData[i]);
 		});
 	});
 });
