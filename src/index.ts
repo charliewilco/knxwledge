@@ -21,7 +21,9 @@ export * from "./problems/repeated-string";
 export * from "./problems/roman-numerals";
 
 // Algorithms
-export * from "./sorting/binary-search";
+export * from "./searching/binary-search";
+export * from "./searching/linear";
+
 export * from "./sorting/bubble-sort";
 export * from "./sorting/fisher-yates";
 export * from "./sorting/merge-sort";
