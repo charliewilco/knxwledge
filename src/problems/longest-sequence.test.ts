@@ -1,4 +1,4 @@
-import { longestIncrSequence } from "../src/problems/longest-sequence";
+import { longestIncrSequence } from "./longest-sequence";
 
 describe("Longest increasing sequence", () => {
 	test("works, kinda", () => {

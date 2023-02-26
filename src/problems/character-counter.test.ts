@@ -1,4 +1,4 @@
-import { countCharacterFrequency } from "../src/problems/character-counter";
+import { countCharacterFrequency } from "./character-counter";
 
 describe("Character Frequency", () => {
 	test("Simple use cases", () => {

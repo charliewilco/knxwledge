@@ -1,4 +1,4 @@
-import { flatIterative, flatRecursive } from "../src/javascript/flat";
+import { flatIterative, flatRecursive } from "./flat";
 
 describe("Flatten array", () => {
 	test("Iterative", () => {

@@ -1,4 +1,4 @@
-import { QuickSort } from "../src/sorting/quick-sort";
+import { QuickSort } from "./quick-sort";
 
 describe("Quick sort", () => {
 	test("sorts numbers", () => {

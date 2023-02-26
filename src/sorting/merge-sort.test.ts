@@ -1,4 +1,4 @@
-import * as Merge from "../src/sorting/merge-sort";
+import * as Merge from "./merge-sort";
 
 describe("Merge sort", () => {
 	test("sorts numbers recursively", () => {

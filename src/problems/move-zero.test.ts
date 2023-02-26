@@ -1,4 +1,4 @@
-import { moveZerosBrute, moveZerosLessBad } from "../src/problems/move-zeros";
+import { moveZerosBrute, moveZerosLessBad } from "./move-zeros";
 
 describe("Move Zeroes", () => {
 	test("runs brute force", () => {

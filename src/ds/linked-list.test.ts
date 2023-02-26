@@ -1,4 +1,4 @@
-import { LinkedList, ListNode } from "../src/ds/linked-list";
+import { LinkedList, ListNode } from "./linked-list";
 
 var linkedList = new LinkedList<number>(1);
 

@@ -1,4 +1,4 @@
-import { betterBubbling as bubbleSort } from "../src/sorting/bubble-sort";
+import { betterBubbling as bubbleSort } from "./bubble-sort";
 
 describe("Bubble sort", () => {
 	test("sorts", () => {

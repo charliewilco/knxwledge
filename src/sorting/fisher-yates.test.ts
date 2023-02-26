@@ -1,4 +1,4 @@
-import { ModernShuffle, ShuffledReport } from "../src/sorting/fisher-yates";
+import { ModernShuffle, ShuffledReport } from "./fisher-yates";
 
 const shuffle = new ModernShuffle(ModernShuffle.mockData);
 const report: ShuffledReport = shuffle.generateReport();
