@@ -1,70 +1,53 @@
-/**
- * Heap Sort is a comparison-based sorting algorithm that works by dividing the input array into a
- * sorted region and an unsorted region, and iteratively removing the largest element from the unsorted
- * region and inserting it into the sorted region. It uses a binary heap data structure to efficiently
- * identify the largest element in the unsorted region, and has a time complexity of O(n log n) for n
- * elements, and a space complexity of O(1).
- *
- * Heap Sort is not stable, meaning that it may change the relative order of equal elements, and it
- * may be less efficient than other sorting algorithms for small inputs or partially sorted arrays.
- * However, it is efficient for large inputs and can be used to implement priority queues and heaps.
- */
-export class HeapSort {
-	/**
-	 * Sorts the input array in ascending order using the Heap Sort algorithm.
-	 *
-	 * @param {T[]} arr - The input array to be sorted
-	 * @param {(a: T, b: T) => number} [compare] - The custom comparison function to use
-	 * @returns {T[]} - The sorted array in ascending order
-	 */
-	static sort<T>(
-		arr: T[],
-		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
-	): T[] {
-		if (arr.length <= 1) {
-			return arr;
-		}
+import { HeapSort } from "./heap-sort";
 
-		// Build a binary max-heap from the input array
-		for (let i = Math.floor(arr.length / 2) - 1; i >= 0; i--) {
-			HeapSort.heapify(arr, i, arr.length, compare);
-		}
+describe("HeapSort", () => {
+	describe("sort", () => {
+		test("should sort an empty array", () => {
+			const arr: number[] = [];
+			const expected: number[] = [];
+			expect(HeapSort.sort(arr)).toEqual(expected);
+		});
 
-		// Move the largest element (root) to the end of the array and heapify the remaining elements
-		for (let i = arr.length - 1; i > 0; i--) {
-			[arr[0], arr[i]] = [arr[i], arr[0]];
-			HeapSort.heapify(arr, 0, i, compare);
-		}
+		test("should sort an array of numbers in ascending order", () => {
+			const arr = [5, 1, 4, 2, 8];
+			const expected = [1, 2, 4, 5, 8];
+			expect(HeapSort.sort(arr)).toEqual(expected);
+		});
 
-		return arr;
-	}
+		test("should sort an array of strings in ascending order", () => {
+			const arr = ["apple", "dog", "cat", "banana"];
+			const expected = ["apple", "banana", "cat", "dog"];
+			expect(HeapSort.sort(arr)).toEqual(expected);
+		});
 
-	/**
-	 * Maintains the max-heap property by swapping the element at the given index with its largest child
-	 * recursively until the subtree rooted at the index is a max-heap. Assumes that the left and right
-	 * subtrees are already max-heaps.
-	 *
-	 * @param {T[]} arr - The array to heapify
-	 * @param {number} i - The index of the root of the subtree to heapify
-	 * @param {number} n - The size of the heap (number of elements in the array)
-	 * @param {(a: T, b: T) => number} compare - The custom comparison function to use
-	 */
-	static heapify<T>(arr: T[], i: number, n: number, compare: (a: T, b: T) => number): void {
-		let largest = i;
-		const left = 2 * i + 1;
-		const right = 2 * i + 2;
+		test("should sort an array of objects by a custom property in ascending order", () => {
+			const arr = [
+				{ name: "Alice", age: 25 },
+				{ name: "Bob", age: 20 },
+				{ name: "Charlie", age: 30 },
+			];
+			const expected = [
+				{ name: "Bob", age: 20 },
+				{ name: "Alice", age: 25 },
+				{ name: "Charlie", age: 30 },
+			];
+			const compare = (a: { name: string; age: number }, b: { name: string; age: number }) =>
+				a.age - b.age;
+			expect(HeapSort.sort(arr, compare)).toEqual(expected);
+		});
 
-		if (left < n && compare(arr[left], arr[largest]) > 0) {
-			largest = left;
-		}
+		test("should sort an array of numbers in descending order", () => {
+			const arr = [5, 1, 4, 2, 8];
+			const expected = [8, 5, 4, 2, 1];
+			const compare = (a: number, b: number) => (a > b ? -1 : a < b ? 1 : 0);
+			expect(HeapSort.sort(arr, compare)).toEqual(expected);
+		});
 
-		if (right < n && compare(arr[right], arr[largest]) > 0) {
-			largest = right;
-		}
-
-		if (largest !== i) {
-			[arr[i], arr[largest]] = [arr[largest], arr[i]];
-			HeapSort.heapify(arr, largest, n, compare);
-		}
-	}
-}
+		test("should sort an array of strings in descending order", () => {
+			const arr = ["apple", "dog", "cat", "banana"];
+			const expected = ["dog", "cat", "banana", "apple"];
+			const compare = (a: string, b: string) => b.localeCompare(a);
+			expect(HeapSort.sort(arr, compare)).toEqual(expected);
+		});
+	});
+});
