@@ -1,4 +1,4 @@
-import { BinarySearchTree } from "../src/ds/binary-search-tree";
+import { BinarySearchTree } from "./binary-search-tree";
 
 const bst = new BinarySearchTree<number>(15);
 

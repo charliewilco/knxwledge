@@ -1,4 +1,4 @@
-import { getIntfromNumeral } from "../src/problems/roman-numerals";
+import { getIntfromNumeral } from "./roman-numerals";
 
 describe("Roman numerals", () => {
 	test("solves simple numerals", () => {

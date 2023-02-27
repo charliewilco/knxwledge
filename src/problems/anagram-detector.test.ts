@@ -1,4 +1,4 @@
-import { anagramDetector } from "../src/problems/anagram-detector";
+import { anagramDetector } from "./anagram-detector";
 
 describe("Anagrams", () => {
 	test("handles basic anagrams", () => {

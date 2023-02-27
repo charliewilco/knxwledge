@@ -1,4 +1,4 @@
-import { _ } from "../src/javascript/lodash-like";
+import { _ } from "./lodash-like";
 
 const testDataObject = {
 	name: "Charles",
