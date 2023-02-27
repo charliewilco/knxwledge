@@ -1,6 +1,6 @@
 {
 	"name": "@charliewilco/knxwledge",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "Unlicense",
 	"main": "./index.js",
 	"typings": "./index.d.ts",
