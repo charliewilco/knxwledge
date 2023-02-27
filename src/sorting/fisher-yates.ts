@@ -10,7 +10,10 @@ export class FisherYatesShuffle<T> {
 	private _thresholds: number[] = [0.25, 0.5, 0.75];
 	public result: T[];
 	public resultDetails: ShuffledReport;
-	public static mockData: number[] = [9, 8, 7, 3, 4, 6, 2, 5, 1];
+
+	public static randomize<T>(input: T[]) {
+		return new FisherYatesShuffle(input).result;
+	}
 
 	constructor(input: T[]) {
 		this._input = input;
