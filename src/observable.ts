@@ -1,13 +1,13 @@
 type ProjectionFn<T> = (val: T) => T;
 
-interface IObserver<T> {
+interface Observer<T> {
 	next(value: T | any): void;
 	complete(): void;
 
 	error(err: Error): void;
 }
 
-type ObserverCallback<T> = (observer: IObserver<T>) => any;
+type ObserverCallback<T> = (observer: Observer<T>) => any;
 
 export class Observable<T extends any> {
 	private _fn: ObserverCallback<T>;
@@ -15,7 +15,7 @@ export class Observable<T extends any> {
 		this._fn = fn;
 	}
 
-	public subscribe(observer: IObserver<T>) {
+	public subscribe(observer: Observer<T>) {
 		return this._fn(observer);
 	}
 
