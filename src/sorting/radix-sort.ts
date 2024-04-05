@@ -75,7 +75,7 @@ export class RadixSort<T> {
 	 * @returns {number} - The digit at the given position in the number
 	 */
 	getDigit(num: number, digitPos: number): number {
-		const divisor = Math.pow(10, digitPos);
+		const divisor = 10 ** digitPos;
 		const quotient = Math.trunc(Math.abs(num) / divisor);
 		const digit = quotient % 10;
 		return num < 0 ? -digit : digit;

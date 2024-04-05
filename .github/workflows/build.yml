@@ -6,20 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
-
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+      - uses: oven-sh/setup-bun@v1
 
       - name: Install deps and build package
-        run: npm ci --force
+        run: bun install
       - name: Build
-        run: npm run build
+        run: bun run build
       - name: Test
-        run: npm test -- --ci --runInBand --no-cache --coverage
+        run: bun test --coverage

@@ -1,15 +1,20 @@
 // TODO: Find something that doesn't mutate
 export function swap<T>(arr: T[], i: number, j: number) {
-	var temp = arr[i];
+	let temp = arr[i];
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
 
-export function partition<T>(arr: T[], pivot: number, left: number, right: number): number {
-	var pivotValue = arr[pivot],
-		partitionIndex = left;
+export function partition<T>(
+	arr: T[],
+	pivot: number,
+	left: number,
+	right: number,
+): number {
+	let pivotValue = arr[pivot];
+	let partitionIndex = left;
 
-	for (var i = left; i < right; i++) {
+	for (let i = left; i < right; i++) {
 		if (arr[i] < pivotValue) {
 			swap(arr, i, partitionIndex);
 			partitionIndex++;
@@ -21,8 +26,8 @@ export function partition<T>(arr: T[], pivot: number, left: number, right: numbe
 
 export function quickSort<T>(arr: T[], left: number, right: number): T[] {
 	let len: number = arr.length;
-	let pivot;
-	let partitionIndex;
+	let pivot: number;
+	let partitionIndex: number;
 
 	if (left < right) {
 		pivot = right;
@@ -47,7 +52,11 @@ export class QuickSort<T> {
 		return this.arr;
 	}
 
-	private quickSort(left: number, right: number, compareFn?: (a: T, b: T) => number): void {
+	private quickSort(
+		left: number,
+		right: number,
+		compareFn?: (a: T, b: T) => number,
+	): void {
 		if (left < right) {
 			const pivotIndex = this.partition(left, right, compareFn);
 			this.quickSort(left, pivotIndex - 1, compareFn);
@@ -55,7 +64,11 @@ export class QuickSort<T> {
 		}
 	}
 
-	private partition(left: number, right: number, compareFn?: (a: T, b: T) => number): number {
+	private partition(
+		left: number,
+		right: number,
+		compareFn?: (a: T, b: T) => number,
+	): number {
 		const pivotIndex = Math.floor((left + right) / 2);
 		const pivot = this.arr[pivotIndex];
 		this.swap(pivotIndex, right);

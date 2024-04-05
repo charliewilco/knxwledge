@@ -9,9 +9,8 @@ export function isUnique(str: string): boolean {
 		if (charsMap[s]) {
 			result = false;
 			break;
-		} else {
-			charsMap[s] = 1;
 		}
+		charsMap[s] = 1;
 	}
 
 	return result;

@@ -22,7 +22,6 @@ export function getIntfromNumeral(roman: string): number | void {
 
 	if (!criteria.test(roman)) {
 		throw new Error(`Input: ${roman} was not a Roman numeral`);
-		return;
 	}
 
 	const split: NumeralID[] = roman.split("") as NumeralID[];

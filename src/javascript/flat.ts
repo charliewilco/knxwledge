@@ -1,4 +1,4 @@
-export function flatIterative<T extends any>(input: any[]): T[] {
+export function flatIterative<T>(input: any[]): T[] {
 	const result: T[] = [];
 	const stack = Array.from(input);
 
@@ -11,11 +11,12 @@ export function flatIterative<T extends any>(input: any[]): T[] {
 	return result;
 }
 
-export function flatRecursive<T extends any>(input: any[], depth: number = 1): T[] {
+export function flatRecursive<T>(input: any[], depth: number = 1): T[] {
 	return depth > 0
 		? input.reduce(
-				(acc, val) => acc.concat(Array.isArray(val) ? flatRecursive(val, depth - 1) : val),
-				[]
-		  )
+				(acc, val) =>
+					acc.concat(Array.isArray(val) ? flatRecursive(val, depth - 1) : val),
+				[],
+			)
 		: input.slice();
 }

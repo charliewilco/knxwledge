@@ -1,3 +1,4 @@
+import { describe, expect, test } from "bun:test";
 import { RadixSort } from "./radix-sort";
 
 describe("RadixSort", () => {
@@ -20,7 +21,10 @@ describe("RadixSort", () => {
 			{ id: 2 },
 			{ id: 66 },
 		];
-		const sortedArr = (sorter as RadixSort<{ id: number }>).sort(arr, (item) => item.id);
+		const sortedArr = (sorter as RadixSort<{ id: number }>).sort(
+			arr,
+			(item) => item.id,
+		);
 		expect(sortedArr).toEqual([
 			{ id: 2 },
 			{ id: 24 },

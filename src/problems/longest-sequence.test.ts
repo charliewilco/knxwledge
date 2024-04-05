@@ -1,3 +1,4 @@
+import { describe, test, expect } from "bun:test";
 import { longestIncrSequence } from "./longest-sequence";
 
 describe("Longest increasing sequence", () => {

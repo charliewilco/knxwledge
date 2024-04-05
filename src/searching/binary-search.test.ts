@@ -1,3 +1,4 @@
+import { describe, test, expect } from "bun:test";
 import { binarySearch as search } from "./binary-search";
 
 const items = [0, 1, 4, 13, 17, 24, 31, 45, 62, 75, 81, 96];

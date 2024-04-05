@@ -17,7 +17,7 @@ export class InsertionSort {
 	 */
 	static sort<T>(
 		arr: T[],
-		compareFn: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
+		compareFn: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0),
 	): T[] {
 		for (let i = 1; i < arr.length; i++) {
 			const key = arr[i];

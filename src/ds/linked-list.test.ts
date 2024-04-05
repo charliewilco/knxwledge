@@ -1,6 +1,7 @@
-import { LinkedList, ListNode } from "./linked-list";
+import { describe, test, expect } from "bun:test";
+import { LinkedList, type ListNode } from "./linked-list";
 
-var linkedList = new LinkedList<number>(1);
+let linkedList = new LinkedList<number>(1);
 
 linkedList.addToTail(2);
 linkedList.addToTail(3);
