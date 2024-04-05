@@ -2,10 +2,9 @@
 
 ![example workflow](https://github.com/charliewilco/knxwledge/actions/workflows/build.yml/badge.svg)
 
-
 Workspace to write, test and understand basic CS concepts like data structures and algorithms in TypeScript.
 
-Check out the `test` directory for implementations.
+Check out the `*.test.ts` files for implementations.
 
 ## Setup
 
@@ -15,20 +14,32 @@ Clone the project:
 git clone https://github.com/charliewilco/knxwledge.git
 ```
 
+### Prerequisites
+
+This project uses Bun as it's TypeScript runtime. Install Bun.
+
+```sh
+curl -fsSL https://bun.sh/install | bash
+```
+
+---
+
 Install the dependencies:
 
 ```sh
-npm install
+bun install
 ```
+
+Primarily this project uses native build commands and test runner from Bun itself. Additionally, it uses [Biome](https://biomejs.dev/) for linting and formatting.
 
 Run development script
 
 ```sh
-npm run build -- -w
+bun run build
 ```
 
-Or run the tests (Jest)
+Or run the tests
 
 ```sh
-npm test
+bun test
 ```
