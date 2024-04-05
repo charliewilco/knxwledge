@@ -1,6 +1,7 @@
+import { describe, expect, test, mock } from "bun:test";
 import { EventEmitter, fnEmitter, fnEmitterMap } from "./event-emitter";
 
-const mock = jest.fn();
+const _mock = mock();
 
 describe("Event Emitter", () => {
 	test("emits result when fired", () => {
@@ -16,7 +17,7 @@ describe("Event Emitter", () => {
 	test("contains event names", () => {
 		const m = new EventEmitter({});
 
-		m.subscribe("mock event", mock);
+		m.subscribe("mock event", _mock);
 		m.subscribe("other mock event", mock);
 		const events = Object.keys(m.events);
 
@@ -28,10 +29,10 @@ describe("Event Emitter", () => {
 		const m = new EventEmitter({});
 		let val = 0;
 
-		m.subscribe("mock event", (n: number) => mock(n));
+		m.subscribe("mock event", (n: number) => _mock(n));
 		m.emit("mock event", 18);
 
-		expect(mock).toHaveBeenCalled();
+		expect(_mock).toHaveBeenCalled();
 	});
 
 	test("unsubscribes from event", () => {
@@ -40,7 +41,7 @@ describe("Event Emitter", () => {
 		let val = 0;
 
 		const e = m.subscribe("mock event", (n: number) => (val = n));
-		m.subscribe("other mock event", mock);
+		m.subscribe("other mock event", _mock);
 		m.emit("mock event", 10);
 		expect(val).toBe(10);
 
@@ -51,7 +52,7 @@ describe("Event Emitter", () => {
 		expect(m.events["mock event"]).toHaveLength(0);
 	});
 
-	xtest("fires event", () => {});
+	test.skip("fires event", () => {});
 });
 
 describe("Event Emitter Function", () => {
@@ -68,8 +69,8 @@ describe("Event Emitter Function", () => {
 	test("contains event names", () => {
 		const m = fnEmitter();
 
-		m.subscribe("mock event", mock);
-		m.subscribe("other mock event", mock);
+		m.subscribe("mock event", _mock);
+		m.subscribe("other mock event", _mock);
 		const events = Object.keys(m.events);
 
 		expect(events).toContain("mock event");
@@ -80,10 +81,10 @@ describe("Event Emitter Function", () => {
 		const m = fnEmitter();
 		let val = 0;
 
-		m.subscribe("mock event", (n: number) => mock(n));
+		m.subscribe("mock event", (n: number) => _mock(n));
 		m.emit("mock event", 18);
 
-		expect(mock).toHaveBeenCalled();
+		expect(_mock).toHaveBeenCalled();
 	});
 
 	test("unsubscribes from event", () => {
@@ -92,7 +93,7 @@ describe("Event Emitter Function", () => {
 		let val = 0;
 
 		const e = m.subscribe("mock event", (n: number) => (val = n));
-		m.subscribe("other mock event", mock);
+		m.subscribe("other mock event", _mock);
 		m.emit("mock event", 10);
 		expect(val).toBe(10);
 
@@ -103,7 +104,7 @@ describe("Event Emitter Function", () => {
 		expect(m.events["mock event"]).toHaveLength(0);
 	});
 
-	xit("fires event", () => {});
+	test.skip("fires event", () => {});
 });
 
 describe("Event Emitter  with a Map", () => {
@@ -120,8 +121,8 @@ describe("Event Emitter  with a Map", () => {
 	test("contains event names", () => {
 		const m = fnEmitterMap();
 
-		m.subscribe("mock event", mock);
-		m.subscribe("other mock event", () => jest.fn());
+		m.subscribe("mock event", _mock);
+		m.subscribe("other mock event", () => mock());
 
 		const events = m.getEventNames();
 
@@ -133,10 +134,10 @@ describe("Event Emitter  with a Map", () => {
 		const m = fnEmitterMap();
 		let val = 0;
 
-		m.subscribe("mock event", (n: number) => mock(n));
+		m.subscribe("mock event", (n: number) => _mock(n));
 		m.emit("mock event", 18);
 
-		expect(mock).toHaveBeenCalled();
+		expect(_mock).toHaveBeenCalled();
 	});
 
 	test("unsubscribes from event", () => {
@@ -156,5 +157,5 @@ describe("Event Emitter  with a Map", () => {
 		expect(m.getEventNames()).not.toContain("mock event");
 	});
 
-	xtest("fires event", () => {});
+	test.skip("fires event", () => {});
 });

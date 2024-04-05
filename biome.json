@@ -1,0 +1,31 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noBannedTypes": "off",
+				"noUselessThisAlias": "warn",
+				"noStaticOnlyClass": "off",
+				"noForEach": "warn"
+			},
+			"style": {
+				"noArguments": "off",
+				"noInferrableTypes": "off",
+				"useConst": "off",
+				"noParameterAssign": "warn",
+				"noUselessElse": "warn",
+				"noNonNullAssertion": "warn"
+			},
+			"suspicious": {
+				"noAssignInExpressions": "warn",
+				"noConfusingVoidType": "warn",
+				"noExplicitAny": "warn"
+			}
+		}
+	}
+}

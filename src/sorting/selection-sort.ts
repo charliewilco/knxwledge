@@ -25,7 +25,10 @@
  * console.log(sortedArr); // Output: [1, 2, 3, 5, 8]
  */
 export class SelectionSort<T> {
-	constructor(private arr: T[], private compareFn?: (a: T, b: T) => number) {}
+	constructor(
+		private arr: T[],
+		private compareFn?: (a: T, b: T) => number,
+	) {}
 
 	sort(): T[] {
 		const n = this.arr.length;

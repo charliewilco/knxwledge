@@ -1,3 +1,4 @@
+import { describe, test, expect } from "bun:test";
 import { countCharacterFrequency } from "./character-counter";
 
 describe("Character Frequency", () => {
@@ -12,7 +13,9 @@ describe("Character Frequency", () => {
 	});
 
 	test("excludes numbers", () => {
-		const longer = countCharacterFrequency("Charles Peters, the star child, born 1991");
+		const longer = countCharacterFrequency(
+			"Charles Peters, the star child, born 1991",
+		);
 
 		expect(longer["1"]).toBeUndefined();
 		expect(longer["9"]).toBeUndefined();
@@ -20,7 +23,7 @@ describe("Character Frequency", () => {
 
 	test("ignores casing", () => {
 		const casing = countCharacterFrequency(
-			"Charles Peters Reads Books! But not by battlestar galatica fans"
+			"Charles Peters Reads Books! But not by battlestar galatica fans",
 		);
 		expect(casing.r).toEqual(4);
 		expect(casing.b).toEqual(4);

@@ -19,7 +19,7 @@ export class MergeSort {
 	 */
 	static sort<T>(
 		arr: T[],
-		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
+		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0),
 	): T[] {
 		if (arr.length <= 1) {
 			return arr;
@@ -32,7 +32,7 @@ export class MergeSort {
 		return MergeSort.merge(
 			MergeSort.sort(left, compare),
 			MergeSort.sort(right, compare),
-			compare
+			compare,
 		);
 	}
 

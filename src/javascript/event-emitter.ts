@@ -33,7 +33,7 @@ export class EventEmitter {
 
 		return {
 			release: () =>
-				this.events[name] && this.events[name].splice(this.events[name].indexOf(cb) >>> 0, 1),
+				this.events[name]?.splice(this.events[name].indexOf(cb) >>> 0, 1),
 		};
 	}
 
@@ -62,7 +62,7 @@ export function fnEmitterMap() {
 
 	const getValues = (): string[] => {
 		const values: string[] = [];
-		for (var [key, value] of events.entries()) {
+		for (let [, value] of events.entries()) {
 			values.push(value);
 		}
 		return values;
@@ -85,7 +85,7 @@ export function fnEmitter(e?: EmitterEventsType) {
 
 			return {
 				release: () => {
-					events[name] && events[name].splice(events[name].indexOf(cb) >>> 0, 1);
+					events[name]?.splice(events[name].indexOf(cb) >>> 0, 1);
 				},
 			};
 		},

@@ -1,6 +1,7 @@
+import { describe, test, expect, mock } from "bun:test";
 import { memoize } from "./memoize";
 
-const add = jest.fn((n: number): number => n + 10);
+const add = mock((n: number): number => n + 10);
 
 const memoizedAdd = memoize(add);
 

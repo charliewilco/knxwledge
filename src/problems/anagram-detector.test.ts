@@ -1,8 +1,16 @@
+import { describe, test, expect } from "bun:test";
 import { anagramDetector } from "./anagram-detector";
 
 describe("Anagrams", () => {
 	test("handles basic anagrams", () => {
-		const result = anagramDetector(["cat", "stop", "hello", "post", "world", "act"]);
+		const result = anagramDetector([
+			"cat",
+			"stop",
+			"hello",
+			"post",
+			"world",
+			"act",
+		]);
 		expect(result).toContain("cat");
 		expect(result).toContain("act");
 	});

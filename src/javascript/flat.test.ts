@@ -1,3 +1,4 @@
+import { describe, test, expect } from "bun:test";
 import { flatIterative, flatRecursive } from "./flat";
 
 describe("Flatten array", () => {

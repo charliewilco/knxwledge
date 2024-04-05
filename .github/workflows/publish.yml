@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: "https://registry.npmjs.org"
 
-      - run: npm ci
+      - run: bun install
       # Publish to npm
       - run: npm publish --access public
         env:

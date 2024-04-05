@@ -19,7 +19,7 @@ export class HeapSort {
 	 */
 	static sort<T>(
 		arr: T[],
-		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
+		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0),
 	): T[] {
 		if (arr.length <= 1) {
 			return arr;
@@ -49,7 +49,12 @@ export class HeapSort {
 	 * @param {number} n - The size of the heap (number of elements in the array)
 	 * @param {(a: T, b: T) => number} compare - The custom comparison function to use
 	 */
-	static heapify<T>(arr: T[], i: number, n: number, compare: (a: T, b: T) => number): void {
+	static heapify<T>(
+		arr: T[],
+		i: number,
+		n: number,
+		compare: (a: T, b: T) => number,
+	): void {
 		let largest = i;
 		const left = 2 * i + 1;
 		const right = 2 * i + 2;

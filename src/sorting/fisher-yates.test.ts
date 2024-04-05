@@ -1,4 +1,5 @@
-import { FisherYatesShuffle, ShuffledReport } from "./fisher-yates";
+import { describe, expect, test } from "bun:test";
+import { FisherYatesShuffle, type ShuffledReport } from "./fisher-yates";
 
 const MOCK_DATA = [9, 8, 7, 3, 4, 6, 2, 5, 1];
 

@@ -9,7 +9,7 @@ interface IObserver<T> {
 
 type ObserverCallback<T> = (observer: IObserver<T>) => any;
 
-export class Observable<T extends any> {
+export class Observable<T> {
 	private _fn: ObserverCallback<T>;
 	constructor(fn: ObserverCallback<T>) {
 		this._fn = fn;

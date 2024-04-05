@@ -1,3 +1,4 @@
+import { describe, test, expect } from "bun:test";
 import { getIntfromNumeral } from "./roman-numerals";
 
 describe("Roman numerals", () => {

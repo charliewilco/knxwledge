@@ -1,8 +1,9 @@
+import { describe, expect, test } from "bun:test";
 import { Queue } from "./stack-queue";
 
 describe("Stack", () => {});
 
-xdescribe("Queue", () => {
+describe.skip("Queue", () => {
 	test("Peek returns head", () => {
 		const q = new Queue(4);
 
