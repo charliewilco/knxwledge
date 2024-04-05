@@ -1,7 +1,6 @@
 // @ts-check
 
 import { deleteAsync } from "del";
-import chalk from "chalk";
 import arg from "arg";
 import path from "node:path";
 
@@ -27,7 +26,8 @@ async function main() {
 		for (const removed of removedPaths) {
 			console.log(
 				"♻️ ",
-				chalk.bold.green(path.relative(process.cwd(), removed)),
+				"\x1b[1m\x1b[32m%s\x1b[0m",
+				path.relative(process.cwd(), removed),
 			);
 		}
 	}
