@@ -35,11 +35,12 @@ Print a single integer denoting the number of letter a's in the first  letters o
 export function repeatedString(predicate: string, repeatedLimit: number) {
 	const reducer = (acc: number, val: string): number => {
 		const assertion = val === "a";
+		let count = acc;
 
 		if (assertion) {
-			acc++;
+			count++;
 		}
-		return acc;
+		return count;
 	};
 
 	if (repeatedLimit < predicate.length) {

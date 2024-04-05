@@ -29,6 +29,7 @@ export class EventEmitter {
 	 * subscribe
 	 */
 	public subscribe(name: string, cb: Function) {
+		// biome-ignore lint/suspicious/noAssignInExpressions: You're not the boss of me.
 		(this.events[name] || (this.events[name] = [])).push(cb);
 
 		return {
@@ -37,8 +38,10 @@ export class EventEmitter {
 		};
 	}
 
-	public emit(name: string, ...args: any[]): void {
-		(this.events[name] || []).forEach((fn) => fn(...args));
+	public emit(name: string, ...args: unknown[]): void {
+		for (const fn of this.events[name] || []) {
+			fn(...args);
+		}
 	}
 }
 
@@ -52,7 +55,7 @@ export function fnEmitterMap() {
 		};
 	};
 
-	const emit = (name: string, data: any) => {
+	const emit = (name: string, data: unknown) => {
 		events.forEach((value, key) => {
 			if (value === name) {
 				key(data);
@@ -81,6 +84,7 @@ export function fnEmitter(e?: EmitterEventsType) {
 	return {
 		events,
 		subscribe: (name: string, cb: Function) => {
+			// biome-ignore lint/suspicious/noAssignInExpressions: Shhhhh, it's okay
 			(events[name] || (events[name] = [])).push(cb);
 
 			return {
@@ -89,8 +93,10 @@ export function fnEmitter(e?: EmitterEventsType) {
 				},
 			};
 		},
-		emit: (name: string, ...args: any[]) => {
-			(events[name] || []).forEach((fn) => fn(...args));
+		emit: (name: string, ...args: unknown[]) => {
+			for (const fn of events[name] || []) {
+				fn(...args);
+			}
 		},
 	};
 }

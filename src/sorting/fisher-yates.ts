@@ -39,9 +39,10 @@ export class FisherYatesShuffle<T> {
 	public checkThresholds(): number {
 		const report = this.resultDetails;
 		let passes = 0;
-		this._thresholds.forEach((threshold) => {
+
+		for (let threshold of this._thresholds) {
 			report.count > report.potential * threshold && ++passes;
-		});
+		}
 
 		return passes;
 	}

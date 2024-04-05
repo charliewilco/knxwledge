@@ -1,11 +1,12 @@
 export function debounce(
 	fn: Function,
 	wait: number,
-	immediate: boolean = false,
+	immediate: boolean = false
 ) {
 	let timeout: Timer | null = null;
 	return function runFn() {
 		const args = arguments;
+		// biome-ignore lint/complexity/noUselessThisAlias: clearer to apply context to the given function
 		const context = this;
 
 		const later = () => {
@@ -29,6 +30,7 @@ export function throttle(fn: Function, wait: number) {
 	return function runner() {
 		lastCalled = Date.now();
 		const args = arguments;
+		// biome-ignore lint/complexity/noUselessThisAlias: clearer to apply context to the given function
 		const context = this;
 
 		if (!previousCall && lastCalled - previousCall > wait) {

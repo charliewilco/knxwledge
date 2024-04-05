@@ -25,19 +25,21 @@ export function evalRPNotation(notationString: string): number {
 	function doCorrectMathBasedOnOperator(
 		operator: string,
 		a: number,
-		b: number,
+		b: number
 	): number {
 		if (operator === "+") {
 			return a + b;
-		} else if (operator === "-") {
-			return a - b;
-		} else if (operator === "*") {
-			return a * b;
-		} else if (operator === "/") {
-			return a / b;
-		} else {
-			return 0;
 		}
+		if (operator === "-") {
+			return a - b;
+		}
+		if (operator === "*") {
+			return a * b;
+		}
+		if (operator === "/") {
+			return a / b;
+		}
+		return 0;
 	}
 
 	for (let i = 0; i < splitInput.length; i++) {
@@ -73,5 +75,6 @@ export function evalRPNotation(notationString: string): number {
 		throw new Error("Something went wrong");
 	}
 
+	// biome-ignore lint/style/noNonNullAssertion: This is a valid operation since we're checking the length of the array
 	return operationTuple.pop()!;
 }

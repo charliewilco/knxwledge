@@ -23,11 +23,10 @@ export function longestIncrSequence(arr: number[]): number[] {
 		// This doesn't mutate the array, but it creates a clone of the input
 		const result: number[] = Array.from(arr).splice(
 			longestIndex,
-			longestLen + 1,
+			longestLen + 1
 		);
 
 		return result.length < 2 ? [] : result;
-	} else {
-		return [];
 	}
+	return [];
 }

@@ -19,7 +19,7 @@ export class MergeSort {
 	 */
 	static sort<T>(
 		arr: T[],
-		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0),
+		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
 	): T[] {
 		if (arr.length <= 1) {
 			return arr;
@@ -32,7 +32,7 @@ export class MergeSort {
 		return MergeSort.merge(
 			MergeSort.sort(left, compare),
 			MergeSort.sort(right, compare),
-			compare,
+			compare
 		);
 	}
 
@@ -49,8 +49,10 @@ export class MergeSort {
 
 		while (left.length > 0 && right.length > 0) {
 			if (compare(left[0], right[0]) <= 0) {
+				// biome-ignore lint/style/noNonNullAssertion: This is a valid operation since we're checking the length of the array
 				result.push(left.shift()!);
 			} else {
+				// biome-ignore lint/style/noNonNullAssertion: This is a valid operation since we're checking the length of the array
 				result.push(right.shift()!);
 			}
 		}

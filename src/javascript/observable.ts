@@ -1,13 +1,14 @@
 type ProjectionFn<T> = (val: T) => T;
 
 interface IObserver<T> {
+	// biome-ignore lint/suspicious/noExplicitAny: in theory you can pass anything to a next() function
 	next(value: T | any): void;
 	complete(): void;
 
 	error(err: Error): void;
 }
 
-type ObserverCallback<T> = (observer: IObserver<T>) => any;
+type ObserverCallback<T> = (observer: IObserver<T>) => T;
 
 export class Observable<T> {
 	private _fn: ObserverCallback<T>;
@@ -22,7 +23,7 @@ export class Observable<T> {
 	public map(projectionFn: ProjectionFn<T>) {
 		return new Observable((observer) => {
 			return this.subscribe({
-				next(val: any) {
+				next(val: T) {
 					observer.next(projectionFn(val));
 				},
 				complete() {

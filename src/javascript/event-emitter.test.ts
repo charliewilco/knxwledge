@@ -8,6 +8,7 @@ describe("Event Emitter", () => {
 		const m = new EventEmitter({});
 		let val = 0;
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		m.subscribe("mock event", (n: number) => (val = n));
 		m.emit("mock event", 18);
 
@@ -40,6 +41,7 @@ describe("Event Emitter", () => {
 
 		let val = 0;
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		const e = m.subscribe("mock event", (n: number) => (val = n));
 		m.subscribe("other mock event", _mock);
 		m.emit("mock event", 10);
@@ -60,6 +62,7 @@ describe("Event Emitter Function", () => {
 		const m = fnEmitter();
 		let val = 0;
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		m.subscribe("mock event", (n: number) => (val = n));
 		m.emit("mock event", 18);
 
@@ -92,6 +95,7 @@ describe("Event Emitter Function", () => {
 
 		let val = 0;
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		const e = m.subscribe("mock event", (n: number) => (val = n));
 		m.subscribe("other mock event", _mock);
 		m.emit("mock event", 10);
@@ -112,6 +116,7 @@ describe("Event Emitter  with a Map", () => {
 		const m = fnEmitterMap();
 		let val = 0;
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		m.subscribe("count", (n: number) => (val = n));
 		m.emit("count", 18);
 
@@ -145,6 +150,7 @@ describe("Event Emitter  with a Map", () => {
 
 		let val = 0;
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		const e = m.subscribe("mock event", (n: number) => (val = n));
 		m.subscribe("other mock event", mock);
 		m.emit("mock event", 10);

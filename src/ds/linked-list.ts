@@ -53,6 +53,7 @@ export class LinkedList<T> {
 		}
 	}
 
+	// biome-ignore lint/suspicious/noConfusingVoidType: Not all paths return a value
 	public getByIndex(idx: number): ListNode<T> | void {
 		if (idx >= this.size()) {
 			throw new Error("Tooooooo much");

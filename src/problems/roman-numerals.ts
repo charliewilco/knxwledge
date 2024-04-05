@@ -17,6 +17,7 @@ const KEY = {
 	M: 1000,
 };
 
+// biome-ignore lint/suspicious/noConfusingVoidType: not all paths return a value
 export function getIntfromNumeral(roman: string): number | void {
 	const criteria: RegExp = RegExp(/[I|V|X|L|C|D|M]/gm);
 
@@ -35,6 +36,7 @@ export function getIntfromNumeral(roman: string): number | void {
 			throw new Error(`Input: ${roman} was not a Roman numeral`);
 		}
 
+		// biome-ignore lint/suspicious/noAssignInExpressions: Bitwise operators are cool. Chill.
 		next && next > current ? (count -= current) : (count += current);
 	}
 

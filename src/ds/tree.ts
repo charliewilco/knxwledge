@@ -34,19 +34,17 @@ export class Tree<T> implements TreeLike<T> {
 	public contains(value: T): boolean {
 		if (value === this.root) {
 			return true;
-		} else if (value < this.root) {
+		}
+		if (value < this.root) {
 			if (this.left === null) {
 				return false;
-			} else {
-				return this.left.contains(value);
 			}
-		} else {
-			if (this.right === null) {
-				return false;
-			} else {
-				return this.right.contains(value);
-			}
+			return this.left.contains(value);
 		}
+		if (this.right === null) {
+			return false;
+		}
+		return this.right.contains(value);
 	}
 
 	public logInOrder(): void {

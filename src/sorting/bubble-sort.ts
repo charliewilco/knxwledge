@@ -14,6 +14,7 @@ export class BubbleSort {
 	 * @returns A sorted array of items.
 	 */
 	static sort<T>(array: T[], compareFn?: (a: T, b: T) => number): T[] {
+		// biome-ignore lint/style/noParameterAssign: This is a valid operation since we're creating a new array
 		array = array.slice();
 
 		for (let i = 0; i < array.length; i++) {
@@ -40,6 +41,7 @@ export class BubbleSort {
 	 * @returns A sorted array of items.
 	 */
 	static optimizedSort<T>(array: T[], compareFn?: (a: T, b: T) => number): T[] {
+		// biome-ignore lint/style/noParameterAssign: This is a valid operation since we're creating a new array
 		array = array.slice();
 
 		for (let i = 0; i < array.length; i++) {

@@ -1,5 +1,6 @@
 import { describe, expect, test } from "bun:test";
-import { FisherYatesShuffle, type ShuffledReport } from "./fisher-yates";
+import { FisherYatesShuffle } from "./fisher-yates";
+import type { ShuffledReport } from "./fisher-yates";
 
 const MOCK_DATA = [9, 8, 7, 3, 4, 6, 2, 5, 1];
 
@@ -18,8 +19,8 @@ describe("Shuffle", () => {
 	});
 
 	test("contains different items", () => {
-		report.indexes.forEach((i) => {
+		for (let i of report.indexes) {
 			expect(shuffle.result[i]).not.toEqual(MOCK_DATA[i]);
-		});
+		}
 	});
 });

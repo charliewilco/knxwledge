@@ -23,17 +23,12 @@ export function isUniqueQuadratic(str: string): boolean {
 	for (let index = 0; index < str.length; index++) {
 		const character = str[index];
 
-		if (prevCharacters.length > 0) {
-			const found = prevCharacters.includes(character);
-			if (found) {
-				result = false;
-				break;
-			} else {
-				prevCharacters.push(character);
-			}
-		} else {
-			prevCharacters.push(character);
+		if (prevCharacters.includes(character)) {
+			result = false;
+			break;
 		}
+
+		prevCharacters.push(character);
 	}
 
 	return result;
@@ -71,8 +66,8 @@ export function urlify(url: string): string {
 	return groups.reduce<string>((acc, value, currentIndex, _) => {
 		const isEnd = currentIndex + 1 === _.length;
 
-		acc += isEnd ? value : value.concat(separator);
-		return acc;
+		const result = acc + (isEnd ? value : value.concat(separator));
+		return result;
 	}, "");
 }
 

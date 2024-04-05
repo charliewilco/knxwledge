@@ -3,9 +3,8 @@ export function isSorted<T>(list: T[]): boolean {
 	for (let i = 0; i < list.length; i++) {
 		if (list[i] < list[i + 1]) {
 			break;
-		} else {
-			val = false;
 		}
+		val = false;
 	}
 
 	return val;
@@ -30,7 +29,8 @@ export function binarySearch<T>(list: T[], item: T): number {
 
 		if (guess === item) {
 			break;
-		} else if (guess > item) {
+		}
+		if (guess > item) {
 			high = mid - 1;
 		} else {
 			low = mid + 1;

@@ -23,6 +23,7 @@ export class _ {
 		return results;
 	}
 
+	// biome-ignore lint/suspicious/noExplicitAny: param must be ambiguous
 	public static has(data: any, path: string): boolean {
 		const keys = _.getPath(path);
 		let result = false;
@@ -40,13 +41,14 @@ export class _ {
 		return result;
 	}
 
+	// biome-ignore lint/suspicious/noExplicitAny: param must be ambiguous
 	public static get<T>(data: any, path: string): T | undefined {
 		const keys = _.getPath(path);
 		let current = data;
 
 		while (keys.length > 0) {
 			const key: string = keys.shift();
-			const item: any = current[key];
+			const item: T = current[key];
 
 			current = item;
 

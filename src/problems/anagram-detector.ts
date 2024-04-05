@@ -9,7 +9,7 @@ export function anagramDetector(input: string[]): string[] {
 	for (let i = 0; i < input.length; i++) {
 		if (prev.has(input[i].length)) {
 			const lengthMatches = prev.get(input[i].length);
-			lengthMatches.forEach((word: string): void => {
+			for (let word of lengthMatches) {
 				const comparer = createComparison(word);
 				const element = createComparison(input[i]);
 
@@ -17,7 +17,7 @@ export function anagramDetector(input: string[]): string[] {
 					result.add(word);
 					result.add(input[i]);
 				}
-			});
+			}
 
 			lengthMatches.push(input[i]);
 		} else {
