@@ -24,11 +24,7 @@ async function main() {
 		}
 
 		for (const removed of removedPaths) {
-			console.log(
-				"♻️ ",
-				"\x1b[1m\x1b[32m%s\x1b[0m",
-				path.relative(process.cwd(), removed),
-			);
+			console.log("♻️ ", "\x1b[1m\x1b[32m%s\x1b[0m", path.relative(process.cwd(), removed));
 		}
 	}
 }

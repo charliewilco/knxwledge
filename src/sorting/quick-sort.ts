@@ -5,12 +5,7 @@ export function swap<T>(arr: T[], i: number, j: number) {
 	arr[j] = temp;
 }
 
-export function partition<T>(
-	arr: T[],
-	pivot: number,
-	left: number,
-	right: number,
-): number {
+export function partition<T>(arr: T[], pivot: number, left: number, right: number): number {
 	let pivotValue = arr[pivot];
 	let partitionIndex = left;
 
@@ -52,11 +47,7 @@ export class QuickSort<T> {
 		return this.arr;
 	}
 
-	private quickSort(
-		left: number,
-		right: number,
-		compareFn?: (a: T, b: T) => number,
-	): void {
+	private quickSort(left: number, right: number, compareFn?: (a: T, b: T) => number): void {
 		if (left < right) {
 			const pivotIndex = this.partition(left, right, compareFn);
 			this.quickSort(left, pivotIndex - 1, compareFn);
@@ -64,11 +55,7 @@ export class QuickSort<T> {
 		}
 	}
 
-	private partition(
-		left: number,
-		right: number,
-		compareFn?: (a: T, b: T) => number,
-	): number {
+	private partition(left: number, right: number, compareFn?: (a: T, b: T) => number): number {
 		const pivotIndex = Math.floor((left + right) / 2);
 		const pivot = this.arr[pivotIndex];
 		this.swap(pivotIndex, right);

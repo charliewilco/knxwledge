@@ -33,8 +33,7 @@ export class EventEmitter {
 		(this.events[name] || (this.events[name] = [])).push(cb);
 
 		return {
-			release: () =>
-				this.events[name]?.splice(this.events[name].indexOf(cb) >>> 0, 1),
+			release: () => this.events[name]?.splice(this.events[name].indexOf(cb) >>> 0, 1),
 		};
 	}
 

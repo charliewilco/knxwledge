@@ -37,11 +37,7 @@ export class SelectionSort<T> {
 			let minIndex = i;
 
 			for (let j = i + 1; j < n; j++) {
-				if (
-					this.compareFn
-						? this.compareFn(this.arr[j], this.arr[minIndex]) < 0
-						: this.arr[j] < this.arr[minIndex]
-				) {
+				if (this.compareFn ? this.compareFn(this.arr[j], this.arr[minIndex]) < 0 : this.arr[j] < this.arr[minIndex]) {
 					minIndex = j;
 				}
 			}

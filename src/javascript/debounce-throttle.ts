@@ -1,8 +1,4 @@
-export function debounce(
-	fn: Function,
-	wait: number,
-	immediate: boolean = false
-) {
+export function debounce(fn: Function, wait: number, immediate: boolean = false) {
 	let timeout: Timer | null = null;
 	return function runFn() {
 		const args = arguments;

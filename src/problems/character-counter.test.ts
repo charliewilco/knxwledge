@@ -13,18 +13,14 @@ describe("Character Frequency", () => {
 	});
 
 	test("excludes numbers", () => {
-		const longer = countCharacterFrequency(
-			"Charles Peters, the star child, born 1991",
-		);
+		const longer = countCharacterFrequency("Charles Peters, the star child, born 1991");
 
 		expect(longer["1"]).toBeUndefined();
 		expect(longer["9"]).toBeUndefined();
 	});
 
 	test("ignores casing", () => {
-		const casing = countCharacterFrequency(
-			"Charles Peters Reads Books! But not by battlestar galatica fans",
-		);
+		const casing = countCharacterFrequency("Charles Peters Reads Books! But not by battlestar galatica fans");
 		expect(casing.r).toEqual(4);
 		expect(casing.b).toEqual(4);
 	});
