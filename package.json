@@ -5,12 +5,7 @@
 	"module": "./index.js",
 	"typings": "./index.d.ts",
 	"sideEffect": false,
-	"files": [
-		"./*.d.ts",
-		"./*.js",
-		"./*.mjs",
-		"./*.map"
-	],
+	"files": ["./*.d.ts", "./*.js", "./*.mjs", "./*.map"],
 	"scripts": {
 		"build": "bun run scripts/build.ts",
 		"clean": "bun run scripts/clean.ts",

@@ -15,10 +15,7 @@ export class InsertionSort {
 	 * @param {(a: T, b: T) => number} compareFn - An optional comparison function that defines the sort order
 	 * @returns {T[]} - The sorted array in ascending order
 	 */
-	static sort<T>(
-		arr: T[],
-		compareFn: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0),
-	): T[] {
+	static sort<T>(arr: T[], compareFn: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)): T[] {
 		for (let i = 1; i < arr.length; i++) {
 			const key = arr[i];
 			let j = i - 1;

@@ -55,9 +55,7 @@ describe("Insertion Sort", () => {
 			{ id: 2, name: "B" },
 			{ id: 1, name: "A" },
 		];
-		expect(
-			InsertionSort.sort(arr, (a, b) => b.name.localeCompare(a.name)),
-		).toEqual(expected);
+		expect(InsertionSort.sort(arr, (a, b) => b.name.localeCompare(a.name))).toEqual(expected);
 	});
 
 	test("should sort an array of numbers in descending order using a custom comparison function", () => {

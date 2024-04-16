@@ -49,9 +49,7 @@ describe("Merge sort", () => {
 			{ id: 2, name: "B" },
 			{ id: 1, name: "A" },
 		];
-		expect(MergeSort.sort(arr, (a, b) => b.name.localeCompare(a.name))).toEqual(
-			expected,
-		);
+		expect(MergeSort.sort(arr, (a, b) => b.name.localeCompare(a.name))).toEqual(expected);
 	});
 
 	test("should sort an array of numbers in descending order using a custom comparison function", () => {

@@ -22,11 +22,7 @@ export function evalRPNotation(notationString: string): number {
 	const operationTuple: number[] = [];
 	const splitInput: string[] = notationString.split(" ");
 
-	function doCorrectMathBasedOnOperator(
-		operator: string,
-		a: number,
-		b: number
-	): number {
+	function doCorrectMathBasedOnOperator(operator: string, a: number, b: number): number {
 		if (operator === "+") {
 			return a + b;
 		}

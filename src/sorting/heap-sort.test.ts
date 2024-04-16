@@ -1,6 +1,11 @@
 import { describe, expect, test } from "bun:test";
 import { HeapSort } from "./heap-sort";
 
+interface Person {
+	name: string;
+	age: number;
+}
+
 describe("HeapSort", () => {
 	test("should sort an empty array", () => {
 		const arr: number[] = [];
@@ -21,20 +26,17 @@ describe("HeapSort", () => {
 	});
 
 	test("should sort an array of objects by a custom property in ascending order", () => {
-		const arr = [
+		const arr: Person[] = [
 			{ name: "Alice", age: 25 },
 			{ name: "Bob", age: 20 },
 			{ name: "Charlie", age: 30 },
 		];
-		const expected = [
+		const expected: Person[] = [
 			{ name: "Bob", age: 20 },
 			{ name: "Alice", age: 25 },
 			{ name: "Charlie", age: 30 },
 		];
-		const compare = (
-			a: { name: string; age: number },
-			b: { name: string; age: number },
-		) => a.age - b.age;
+		const compare = (a: Person, b: Person) => a.age - b.age;
 		expect(HeapSort.sort(arr, compare)).toEqual(expected);
 	});
 
