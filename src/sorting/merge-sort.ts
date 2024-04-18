@@ -38,7 +38,7 @@ export class MergeSort {
 	 * @returns {T[]} - The merged sorted array in ascending order
 	 */
 	static merge<T>(left: T[], right: T[], compare: (a: T, b: T) => number): T[] {
-		let result = [];
+		let result: T[] = [];
 
 		while (left.length > 0 && right.length > 0) {
 			if (compare(left[0], right[0]) <= 0) {
