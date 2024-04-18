@@ -23,4 +23,10 @@ describe("Shuffle", () => {
 			expect(shuffle.result[i]).not.toEqual(MOCK_DATA[i]);
 		}
 	});
+
+	test("from", () => {
+		const shuffled = FisherYatesShuffle.from(MOCK_DATA);
+		expect(shuffled).toBeInstanceOf(FisherYatesShuffle);
+		expect(shuffled.result).not.toEqual(MOCK_DATA);
+	});
 });

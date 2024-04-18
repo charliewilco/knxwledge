@@ -38,6 +38,11 @@ export function quickSort<T>(arr: T[], left: number, right: number): T[] {
 export class QuickSort<T> {
 	private arr: T[];
 
+	static sort<T>(arr: T[], compareFn?: (a: T, b: T) => number): T[] {
+		const q = new QuickSort(arr);
+		return q.sort(compareFn);
+	}
+
 	constructor(arr: T[]) {
 		this.arr = arr;
 	}

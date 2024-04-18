@@ -16,6 +16,12 @@
  * @template T - The type of elements in the input array
  */
 export class RadixSort<T> {
+	static sort<T>(arr: T[], getKey: (item: T) => number): T[] {
+		const sorter = new RadixSort<T>();
+
+		return sorter.sort(arr, getKey);
+	}
+
 	/**
 	 * Sorts the input array using the Radix Sort algorithm and returns the sorted array
 	 *
