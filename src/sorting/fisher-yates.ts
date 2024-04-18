@@ -15,6 +15,10 @@ export class FisherYatesShuffle<T> {
 		return new FisherYatesShuffle(input).result;
 	}
 
+	public static from<T>(input: T[]) {
+		return new FisherYatesShuffle(input);
+	}
+
 	constructor(input: T[]) {
 		this._input = input;
 		this.result = this.randomize();

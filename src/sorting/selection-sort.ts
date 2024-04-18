@@ -30,6 +30,11 @@ export class SelectionSort<T> {
 		private compareFn?: (a: T, b: T) => number,
 	) {}
 
+	static sort<T>(arr: T[], compareFn?: (a: T, b: T) => number): T[] {
+		const selectionSort = new SelectionSort(arr, compareFn);
+		return selectionSort.sort();
+	}
+
 	sort(): T[] {
 		const n = this.arr.length;
 
