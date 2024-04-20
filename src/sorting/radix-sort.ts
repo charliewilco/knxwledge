@@ -40,7 +40,7 @@ export class RadixSort<T> {
 		let sortedArr = arr;
 
 		for (let digit = 0; digit < maxDigitCount; digit++) {
-			const buckets = Array.from({ length: 10 }, () => []);
+			const buckets: T[][] = Array.from({ length: 10 }, () => []);
 
 			for (let i = 0; i < sortedArr.length; i++) {
 				const bucketIndex = this.getDigit(getKey(sortedArr[i]), digit);
