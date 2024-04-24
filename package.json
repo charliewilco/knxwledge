@@ -10,6 +10,7 @@
 		"build": "bun run scripts/build.ts",
 		"clean": "bun run scripts/clean.ts",
 		"test": "bun test",
+		"coverage": "bun test --coverage",
 		"lint": "biome lint ./src ./scripts --log-level=error",
 		"format": "biome format --write ./src ./scripts *.json"
 	},
