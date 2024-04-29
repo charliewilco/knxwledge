@@ -8,7 +8,11 @@ describe("maxPathSum", () => {
 	});
 
 	test("calculates maximum path sum with negative values", () => {
-		const root = new TreeNode(-10, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+		const root = new TreeNode(
+			-10,
+			new TreeNode(9),
+			new TreeNode(20, new TreeNode(15), new TreeNode(7)),
+		);
 		expect(maxPathSum(root)).toEqual(42); // The path 15 -> 20 -> 7
 	});
 

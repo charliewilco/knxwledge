@@ -1,11 +1,11 @@
-import { describe, test, expect } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import {
+	containsPermutationPalindromes,
+	isPermutation,
 	isUnique,
 	isUniqueQuadratic,
-	isPermutation,
-	urlify,
-	containsPermutationPalindromes,
 	oneAway,
+	urlify,
 } from "./01-strings-arrays";
 
 describe("1.1 isUnique", () => {

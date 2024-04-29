@@ -13,6 +13,9 @@ export function flatIterative<T>(input: T[]): T[] {
 
 export function flatRecursive<T>(input: T[], depth: number = 1): T[] {
 	return depth > 0
-		? input.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatRecursive(val, depth - 1) : val), [])
+		? input.reduce(
+				(acc, val) => acc.concat(Array.isArray(val) ? flatRecursive(val, depth - 1) : val),
+				[],
+			)
 		: input.slice();
 }

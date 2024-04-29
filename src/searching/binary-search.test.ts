@@ -1,16 +1,16 @@
-import { describe, test, expect } from "bun:test";
-import { binarySearch as search } from "./binary-search";
+import { describe, expect, test } from "bun:test";
+import { binarySearch } from "./binary-search";
 
 const items = [0, 1, 4, 13, 17, 24, 31, 45, 62, 75, 81, 96];
 
 describe("Binary search", () => {
 	test("can find the index", () => {
-		expect(search(items, 13)).toBe(3);
+		expect(binarySearch(items, 13)).toBe(3);
 	});
 
 	test("throws an error if there are no items", () => {
 		function searchEmpty() {
-			search([], 3);
+			binarySearch([], 3);
 		}
 
 		expect(searchEmpty).toThrowError();
@@ -18,7 +18,7 @@ describe("Binary search", () => {
 
 	test("throws an error if there are no items", () => {
 		function searchUnsorted() {
-			search([3, 1, 4, 2], 3);
+			binarySearch([3, 1, 4, 2], 3);
 		}
 
 		expect(searchUnsorted).toThrowError();

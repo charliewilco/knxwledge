@@ -15,7 +15,14 @@ const { values } = parseArgs({
 });
 
 const output = await Bun.build({
-	entrypoints: ["src/ds.ts", "src/index.ts", "src/js.ts", "src/problems.ts", "src/search.ts", "src/sorting.ts"],
+	entrypoints: [
+		"src/ds.ts",
+		"src/index.ts",
+		"src/js.ts",
+		"src/problems.ts",
+		"src/search.ts",
+		"src/sorting.ts",
+	],
 	outdir: "./dist",
 	sourcemap: "external",
 	splitting: false,

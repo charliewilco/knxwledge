@@ -3,7 +3,7 @@ import path from "node:path";
 import { generateDtsBundle } from "dts-bundle-generator";
 
 import type { BunPlugin } from "bun";
-import type { EntryPointConfig, CompilationOptions } from "dts-bundle-generator";
+import type { CompilationOptions, EntryPointConfig } from "dts-bundle-generator";
 
 type Options = Omit<EntryPointConfig, "filePath"> & {
 	compilationOptions?: CompilationOptions;
