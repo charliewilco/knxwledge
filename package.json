@@ -1,23 +1,24 @@
 {
-	"name": "@charliewilco/knxwledge",
-	"version": "2.0.1",
-	"license": "Unlicense",
-	"module": "./index.js",
-	"typings": "./index.d.ts",
-	"sideEffect": false,
-	"files": ["./*.d.ts", "./*.js", "./*.mjs", "./*.map"],
-	"scripts": {
-		"build": "bun run scripts/build.ts",
-		"clean": "bun run scripts/clean.ts",
-		"test": "bun test",
-		"coverage": "bun test --coverage",
-		"lint": "biome lint ./src ./scripts --log-level=error",
-		"format": "biome format --write ./src ./scripts *.json"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.7.1",
-		"@types/bun": "latest",
-		"dts-bundle-generator": "^9.3.1",
-		"typescript": "^5.4.3"
-	}
+  "name": "@charliewilco/knxwledge",
+  "version": "2.0.1",
+  "license": "Unlicense",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "sideEffect": false,
+  "files": ["./*.d.ts", "./*.js", "./*.mjs", "./*.map"],
+  "scripts": {
+    "build": "bun run scripts/build.ts",
+    "clean": "bun run scripts/clean.ts",
+    "test": "bun test",
+    "coverage": "bun test --coverage",
+    "lint": "biome lint ./src ./scripts --log-level=error",
+    "format": "biome format --write ./src ./scripts *.json"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.1",
+    "@types/bun": "latest",
+    "dts-bundle-generator": "^9.3.1",
+    "lefthook": "^1.6.10",
+    "typescript": "^5.4.3"
+  }
 }
