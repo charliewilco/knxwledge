@@ -14,7 +14,7 @@
 		"format": "biome format --write ./src ./scripts *.json"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.2",
+		"@biomejs/biome": "1.7.3",
 		"@types/bun": "latest",
 		"arg": "^5.0.2",
 		"del": "^7.1.0",
