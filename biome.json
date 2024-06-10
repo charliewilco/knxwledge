@@ -4,7 +4,13 @@
 		"enabled": true
 	},
 	"formatter": {
-		"lineWidth": 120
+		"lineWidth": 100,
+		"indentStyle": "tab"
+	},
+	"json": {
+		"formatter": {
+			"indentStyle": "tab"
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -30,5 +36,10 @@
 				"noExplicitAny": "warn"
 			}
 		}
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
 	}
 }

@@ -1,11 +1,17 @@
 import fs from "node:fs";
-import arg from "arg";
-import { rename } from "./rename";
+import { join } from "node:path";
+import { parseArgs } from "node:util";
 import { dtsPlugin } from "./dts";
 
-const args = arg({
-	"--moveOutput": Boolean,
-	"-m": "--moveOutput",
+const { values } = parseArgs({
+	args: Bun.argv,
+	options: {
+		moveOutput: {
+			type: "boolean",
+			short: "m",
+		},
+	},
+	allowPositionals: true,
 });
 
 const output = await Bun.build({
@@ -24,7 +30,14 @@ const output = await Bun.build({
 	plugins: [dtsPlugin()],
 });
 
-if (output.success && !args["--moveOutput"]) {
+if (output.success && !values.moveOutput) {
+	async function rename(file: string) {
+		let src = join("./dist", file);
+		let dest = join("./", file);
+		console.log("\x1b[2m\x1b[31m%s\x1b[0m", src, " 🔜 ", "\x1b[34m%s\x1b[0m", dest);
+		return fs.promises.rename(src, dest);
+	}
+
 	const files = await fs.promises.readdir("./dist");
 	await Promise.all(files.map(rename));
 }

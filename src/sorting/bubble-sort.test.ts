@@ -1,4 +1,4 @@
-import { expect, test, describe } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import { BubbleSort } from "./bubble-sort";
 
 describe("BubbleSort", () => {
@@ -32,7 +32,8 @@ describe("BubbleSort", () => {
 				{ name: "Alice", age: 25 },
 				{ name: "Charlie", age: 30 },
 			];
-			const compare = (a: { name: string; age: number }, b: { name: string; age: number }) => a.age - b.age;
+			const compare = (a: { name: string; age: number }, b: { name: string; age: number }) =>
+				a.age - b.age;
 			expect(BubbleSort.sort(arr, compare)).toEqual(expected);
 		});
 

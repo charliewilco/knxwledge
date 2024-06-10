@@ -17,7 +17,10 @@ export class HeapSort {
 	 * @param {(a: T, b: T) => number} [compare] - The custom comparison function to use
 	 * @returns {T[]} - The sorted array in ascending order
 	 */
-	static sort<T>(arr: T[], compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0)): T[] {
+	static sort<T>(
+		arr: T[],
+		compare: (a: T, b: T) => number = (a, b) => (a < b ? -1 : a > b ? 1 : 0),
+	): T[] {
 		if (arr.length <= 1) {
 			return arr;
 		}

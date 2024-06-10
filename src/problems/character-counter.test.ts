@@ -1,4 +1,4 @@
-import { describe, test, expect } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import { countCharacterFrequency } from "./character-counter";
 
 describe("Character Frequency", () => {
@@ -20,7 +20,9 @@ describe("Character Frequency", () => {
 	});
 
 	test("ignores casing", () => {
-		const casing = countCharacterFrequency("Charles Peters Reads Books! But not by battlestar galatica fans");
+		const casing = countCharacterFrequency(
+			"Charles Peters Reads Books! But not by battlestar galatica fans",
+		);
 		expect(casing.r).toEqual(4);
 		expect(casing.b).toEqual(4);
 	});

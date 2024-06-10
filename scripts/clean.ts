@@ -1,23 +1,39 @@
-// @ts-check
-
-import { deleteAsync } from "del";
-import arg from "arg";
 import path from "node:path";
+import { parseArgs } from "node:util";
+import { $, Glob } from "bun";
 
-const buildOuputPaths = ["./dist", "./*.js", "./*.d.ts", "./*.mjs", "./*.map"];
+const buildOuputPaths = ["./dist", "./*.js", "./*.mjs", "./*.d.ts", "./*.map"];
 
-const args = arg({
-	"--dryrun": Boolean,
-	"-d": "--dryrun",
+const { values } = parseArgs({
+	args: Bun.argv,
+	options: {
+		dryrun: {
+			type: "boolean",
+			short: "d",
+		},
+	},
+	allowPositionals: true,
 });
 
-async function main() {
-	if (!process.env.CI) {
-		const removedPaths = await deleteAsync(buildOuputPaths, {
-			dryRun: args["--dryrun"],
-		});
+const rmrf = (path: string) => $`rm -rf ${path}`;
 
-		if (args["--dryrun"]) {
+async function main() {
+	const removedPaths: string[] = [];
+
+	const globs = buildOuputPaths.map((paths) => new Glob(paths));
+
+	const files = globs.flatMap((g) => [...g.scanSync()]);
+
+	if (!process.env.CI) {
+		if (values.dryrun) {
+			removedPaths.push(...files);
+		}
+
+		if (!values.dryrun) {
+			await Promise.all(files.map((file) => rmrf(file).then(() => removedPaths.push(file))));
+		}
+
+		if (values.dryrun) {
 			console.log("Would-be deleted directories:\n");
 		} else {
 			console.log("Deleted directories:\n");

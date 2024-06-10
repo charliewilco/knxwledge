@@ -1,8 +1,7 @@
 type ProjectionFn<T> = (val: T) => T;
 
 interface IObserver<T> {
-	// biome-ignore lint/suspicious/noExplicitAny: in theory you can pass anything to a next() function
-	next(value: T | any): void;
+	next(value: T): void;
 	complete(): void;
 
 	error(err: Error): void;
