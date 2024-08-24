@@ -44,7 +44,7 @@ export class EventEmitter {
 	}
 }
 
-export function fnEmitterMap() {
+export function createEventEmitterMap() {
 	const events = new Map<Function, string>();
 
 	const subscribe = (name: string, fn: Function) => {
@@ -77,7 +77,7 @@ export function fnEmitterMap() {
 	};
 }
 
-export function fnEmitter(e?: EmitterEventsType) {
+export function createEventEmitter(e?: EmitterEventsType) {
 	let events: EmitterEventsType = e || {};
 
 	return {

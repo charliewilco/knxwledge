@@ -1,5 +1,5 @@
 import { describe, expect, mock, test } from "bun:test";
-import { EventEmitter, fnEmitter, fnEmitterMap } from "./event-emitter";
+import { EventEmitter, createEventEmitter, createEventEmitterMap } from "./event-emitter";
 
 const _mock = mock();
 
@@ -59,7 +59,7 @@ describe("Event Emitter", () => {
 
 describe("Event Emitter Function", () => {
 	test("emits result when fired", () => {
-		const m = fnEmitter();
+		const m = createEventEmitter();
 		let val = 0;
 
 		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
@@ -70,7 +70,7 @@ describe("Event Emitter Function", () => {
 	});
 
 	test("contains event names", () => {
-		const m = fnEmitter();
+		const m = createEventEmitter();
 
 		m.subscribe("mock event", _mock);
 		m.subscribe("other mock event", _mock);
@@ -81,7 +81,7 @@ describe("Event Emitter Function", () => {
 	});
 
 	test("fires call back when emitted", () => {
-		const m = fnEmitter();
+		const m = createEventEmitter();
 		let val = 0;
 
 		m.subscribe("mock event", (n: number) => _mock(n));
@@ -91,7 +91,7 @@ describe("Event Emitter Function", () => {
 	});
 
 	test("unsubscribes from event", () => {
-		const m = fnEmitter();
+		const m = createEventEmitter();
 
 		let val = 0;
 
@@ -113,7 +113,7 @@ describe("Event Emitter Function", () => {
 
 describe("Event Emitter  with a Map", () => {
 	test("emits result when fired", () => {
-		const m = fnEmitterMap();
+		const m = createEventEmitterMap();
 		let val = 0;
 
 		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
@@ -124,7 +124,7 @@ describe("Event Emitter  with a Map", () => {
 	});
 
 	test("contains event names", () => {
-		const m = fnEmitterMap();
+		const m = createEventEmitterMap();
 
 		m.subscribe("mock event", _mock);
 		m.subscribe("other mock event", () => mock());
@@ -136,7 +136,7 @@ describe("Event Emitter  with a Map", () => {
 	});
 
 	test("fires call back when emitted", () => {
-		const m = fnEmitterMap();
+		const m = createEventEmitterMap();
 		let val = 0;
 
 		m.subscribe("mock event", (n: number) => _mock(n));
@@ -146,7 +146,7 @@ describe("Event Emitter  with a Map", () => {
 	});
 
 	test("unsubscribes from event", () => {
-		const m = fnEmitterMap();
+		const m = createEventEmitterMap();
 
 		let val = 0;
 
