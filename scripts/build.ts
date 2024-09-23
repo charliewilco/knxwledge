@@ -1,5 +1,3 @@
-import fs from "node:fs";
-import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { dtsPlugin } from "./dts";
 
@@ -31,13 +29,7 @@ const output = await Bun.build({
 });
 
 if (output.success && !values.moveOutput) {
-	async function rename(file: string) {
-		let src = join("./dist", file);
-		let dest = join("./", file);
-		console.log("\x1b[2m\x1b[91m%s\x1b[0m", src, " 🔜 ", "\x1b[34m%s\x1b[0m", dest);
-		return fs.promises.rename(src, dest);
+	for (const buildArtifact of output.outputs) {
+		console.log(buildArtifact.path);
 	}
-
-	const files = await fs.promises.readdir("./dist");
-	await Promise.all(files.map(rename));
 }
