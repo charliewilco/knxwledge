@@ -1,7 +1,7 @@
-import { describe, expect, mock, test } from "bun:test";
-import { EventEmitter, createEventEmitter, createEventEmitterMap } from "./event-emitter";
+import { describe, expect, jest, test } from "@jest/globals";
+import { EventEmitter, createEventEmitter, createEventEmitterMap } from "./event-emitter.ts";
 
-const _mock = mock();
+const _mock = jest.fn();
 
 describe("Event Emitter", () => {
 	test("emits result when fired", () => {
@@ -19,7 +19,7 @@ describe("Event Emitter", () => {
 		const m = new EventEmitter({});
 
 		m.subscribe("mock event", _mock);
-		m.subscribe("other mock event", mock);
+		m.subscribe("other mock event", jest.fn);
 		const events = Object.keys(m.events);
 
 		expect(events).toContain("mock event");
@@ -127,7 +127,7 @@ describe("Event Emitter  with a Map", () => {
 		const m = createEventEmitterMap();
 
 		m.subscribe("mock event", _mock);
-		m.subscribe("other mock event", () => mock());
+		m.subscribe("other mock event", () => jest.fn());
 
 		const events = m.getEventNames();
 
@@ -152,7 +152,7 @@ describe("Event Emitter  with a Map", () => {
 
 		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		const e = m.subscribe("mock event", (n: number) => (val = n));
-		m.subscribe("other mock event", mock);
+		m.subscribe("other mock event", jest.fn);
 		m.emit("mock event", 10);
 		expect(val).toBe(10);
 

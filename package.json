@@ -2,54 +2,52 @@
 	"name": "@charliewilco/knxwledge",
 	"version": "2.0.5",
 	"license": "Unlicense",
+	"type": "module",
 	"module": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
+	"files": ["dist"],
 	"sideEffect": false,
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"module": "./dist/index.js",
-			"default": "./dist/index.js"
+			"import": "./dist/index.js"
 		},
 		"./ds": {
-			"types": "./dist/ds.d.ts",
-			"module": "./dist/ds.js",
-			"default": "./dist/ds.js"
+			"types": "./dist/ds.d..ts",
+			"import": "./dist/ds.js"
 		},
 		"./js": {
 			"types": "./dist/js.d.ts",
-			"module": "./dist/js.js",
-			"default": "./dist/js.js"
+			"import": "./dist/js.js"
 		},
 		"./problems": {
 			"types": "./dist/problems.d.ts",
-			"module": "./dist/problems.js",
-			"default": "./dist/problems.js"
+			"import": "./dist/problems.js"
 		},
 		"./search": {
 			"types": "./dist/search.d.ts",
-			"module": "./dist/search.js",
-			"default": "./dist/search.js"
+			"import": "./dist/search.js"
 		},
 		"./sorting": {
-			"types": "./dist/sorting.d.ts",
-			"module": "./dist/sorting.js",
-			"default": "./dist/sorting.js"
+			"types": "./dist/sorting.d..ts",
+			"import": "./dist/sorting.js"
 		}
 	},
 	"scripts": {
-		"build": "bun run scripts/build.ts",
-		"clean": "bun run scripts/clean.ts",
-		"test": "bun test",
-		"coverage": "bun test --coverage",
+		"build": "tsdown --config config/tsdown.config.ts",
+		"test": "jest --verbose --silent --config=./config/jest.config.cjs",
+		"coverage": "jest --verbose --silent --config=./config/jest.config.cjs --coverage",
 		"lint": "biome lint ./src ./scripts --log-level=error",
-		"format": "biome format --write ./src ./scripts *.json"
+		"format": "biome format --write ./src ./config *.json"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest",
-		"dts-bundle-generator": "^9.5.1",
+		"@jest/globals": "^29.7.0",
+		"@swc/jest": "^0.2.38",
+		"jest": "^29.7.0",
 		"lefthook": "^1.11.13",
+		"publint": "^0.3.12",
+		"tsdown": "^0.12.3",
 		"typescript": "^5"
 	},
 	"publishConfig": {

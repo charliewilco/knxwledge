@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { InsertionSort } from "./insertion-sort";
+import { describe, expect, test } from "@jest/globals";
+import { InsertionSort } from "./insertion-sort.ts";
 
 describe("Insertion Sort", () => {
 	test("should return an empty array when given an empty array", () => {

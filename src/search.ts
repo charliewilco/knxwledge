@@ -1,2 +1,2 @@
-export * from "./searching/binary-search";
-export * from "./searching/linear";
+export * from "./searching/binary-search.ts";
+export * from "./searching/linear.ts";

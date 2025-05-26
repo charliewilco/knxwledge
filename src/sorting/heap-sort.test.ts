@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { HeapSort } from "./heap-sort";
+import { describe, expect, test } from "@jest/globals";
+import { HeapSort } from "./heap-sort.ts";
 
 interface Person {
 	name: string;

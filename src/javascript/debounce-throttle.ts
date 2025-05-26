@@ -1,5 +1,5 @@
 export function debounce(fn: Function, wait: number, immediate: boolean = false) {
-	let timeout: Timer | null = null;
+	let timeout: NodeJS.Timeout | null = null;
 	return function runFn() {
 		const args = arguments;
 		// biome-ignore lint/complexity/noUselessThisAlias: clearer to apply context to the given function

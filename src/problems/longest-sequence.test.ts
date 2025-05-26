@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { longestIncrSequence } from "./longest-sequence";
+import { describe, expect, test } from "@jest/globals";
+import { longestIncrSequence } from "./longest-sequence.ts";
 
 describe("Longest increasing sequence", () => {
 	test("works, kinda", () => {

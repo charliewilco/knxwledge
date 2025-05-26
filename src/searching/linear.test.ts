@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { linearSearch } from "./linear";
+import { describe, expect, test } from "@jest/globals";
+import { linearSearch } from "./linear.ts";
 
 describe("linearSearch", () => {
 	const arr = [5, 3, 8, 2, 1];

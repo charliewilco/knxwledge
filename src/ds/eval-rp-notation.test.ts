@@ -1,5 +1,5 @@
-import { describe, test, expect } from "bun:test";
-import { evalRPNotation } from "./eval-reverse-polish-notation";
+import { describe, expect, test } from "@jest/globals";
+import { evalRPNotation } from "./eval-reverse-polish-notation.ts";
 
 describe("Eval Reverse Polish Notation", () => {
 	test("test case 1", () => {

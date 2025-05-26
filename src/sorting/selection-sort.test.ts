@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { SelectionSort } from "./selection-sort";
+import { describe, expect, test } from "@jest/globals";
+import { SelectionSort } from "./selection-sort.ts";
 
 describe("SelectionSort", () => {
 	test("sorts an array of numbers in ascending order", () => {

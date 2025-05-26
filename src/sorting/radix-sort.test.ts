@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { RadixSort } from "./radix-sort";
+import { describe, expect, test } from "@jest/globals";
+import { RadixSort } from "./radix-sort.ts";
 
 describe("RadixSort", () => {
 	test("Sorts an array of integers in ascending order", () => {

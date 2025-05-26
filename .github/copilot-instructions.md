@@ -1,0 +1,7 @@
+- use `pnpm`
+- use hard tabs
+- use Jest for unit tests
+- prefer impoting globals in unit tests from "@jest/globals"
+- do not add dependencies
+- if tests are consistently failing remember to run `pnpm jest --clearCache`
+- follow formatting found in biome.json

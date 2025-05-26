@@ -1,9 +1,9 @@
 [pre-commit.commands.check]
 glob = "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
 exclude = "package.json"
-run = "bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}"
+run = "pnpm dlx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}"
 
 [pre-commit.commands.format]
 glob = "package.json"
 exclude = "package.json"
-run = "bunx biome format --write --files-ignore-unknown=true --colors=off {staged_files} && git update-index --again"
+run = "pnpm dlx @biomejs/biome format --write --files-ignore-unknown=true --colors=off {staged_files} && git update-index --again"

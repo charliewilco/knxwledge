@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { Queue } from "./stack-queue";
+import { describe, expect, test } from "@jest/globals";
+import { Queue } from "./stack-queue.ts";
 
 describe("Stack", () => {});
 

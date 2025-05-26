@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { MergeSort } from "./merge-sort";
+import { describe, expect, test } from "@jest/globals";
+import { MergeSort } from "./merge-sort.ts";
 
 describe("Merge sort", () => {
 	test("should sort an empty array", () => {

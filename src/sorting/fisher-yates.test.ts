@@ -1,6 +1,6 @@
-import { describe, expect, test } from "bun:test";
-import { FisherYatesShuffle } from "./fisher-yates";
-import type { ShuffledReport } from "./fisher-yates";
+import { describe, expect, test } from "@jest/globals";
+import { FisherYatesShuffle } from "./fisher-yates.ts";
+import type { ShuffledReport } from "./fisher-yates.ts";
 
 const MOCK_DATA = [9, 8, 7, 3, 4, 6, 2, 5, 1];
 

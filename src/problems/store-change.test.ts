@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { StoreData } from "./store-change";
+import { describe, expect, test } from "@jest/globals";
+import { StoreData } from "./store-change.ts";
 
 describe("StoreData", () => {
 	test("add key/value pair", () => {

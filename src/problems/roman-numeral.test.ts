@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { getIntfromNumeral } from "./roman-numerals";
+import { describe, expect, test } from "@jest/globals";
+import { getIntfromNumeral } from "./roman-numerals.ts";
 
 describe("Roman numerals", () => {
 	test("solves simple numerals", () => {

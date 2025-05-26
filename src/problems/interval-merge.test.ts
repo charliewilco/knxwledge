@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { merge } from "./interval-merge";
+import { describe, expect, test } from "@jest/globals";
+import { merge } from "./interval-merge.ts";
 
 describe("mergeIntervals", () => {
 	test("merges overlapping intervals", () => {

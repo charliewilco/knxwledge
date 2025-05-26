@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { countCharacterFrequency } from "./character-counter";
+import { describe, expect, test } from "@jest/globals";
+import { countCharacterFrequency } from "./character-counter.ts";
 
 describe("Character Frequency", () => {
 	test("Simple use cases", () => {

@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { QuickSort } from "./quick-sort";
+import { describe, expect, test } from "@jest/globals";
+import { QuickSort } from "./quick-sort.ts";
 
 describe("Quick sort", () => {
 	test("sorts numbers", () => {

@@ -1,5 +1,5 @@
-import { describe, test, expect } from "bun:test";
-import { BinarySearchTree } from "./binary-search-tree";
+import { describe, expect, test } from "@jest/globals";
+import { BinarySearchTree } from "./binary-search-tree.ts";
 
 const bst = new BinarySearchTree<number>(15);
 

@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { BubbleSort } from "./bubble-sort";
+import { describe, expect, test } from "@jest/globals";
+import { BubbleSort } from "./bubble-sort.ts";
 
 describe("BubbleSort", () => {
 	describe("sort", () => {

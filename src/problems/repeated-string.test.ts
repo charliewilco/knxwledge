@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { repeatedString } from "./repeated-string";
+import { describe, expect, test } from "@jest/globals";
+import { repeatedString } from "./repeated-string.ts";
 
 describe("Repeated string", () => {
 	test("large limits", () => {

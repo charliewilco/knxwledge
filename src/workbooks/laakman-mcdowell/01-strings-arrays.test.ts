@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "@jest/globals";
 import {
 	containsPermutationPalindromes,
 	isPermutation,
@@ -6,7 +6,7 @@ import {
 	isUniqueQuadratic,
 	oneAway,
 	urlify,
-} from "./01-strings-arrays";
+} from "./01-strings-arrays.ts";
 
 describe("1.1 isUnique", () => {
 	test("LINEAR: can handle unique values", () => {
