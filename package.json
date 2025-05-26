@@ -5,7 +5,9 @@
 	"type": "module",
 	"module": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"sideEffect": false,
 	"exports": {
 		".": {
@@ -52,5 +54,11 @@
 	},
 	"publishConfig": {
 		"@charliewilco:registry": "https://npm.pkg.github.com/"
-	}
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@biomejs/biome"
+		]
+	},
+	"packageManager": "pnpm@10.6.1"
 }
