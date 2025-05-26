@@ -51,5 +51,8 @@
 		"dts-bundle-generator": "^9.5.1",
 		"lefthook": "^1.11.13",
 		"typescript": "^5"
+	},
+	"publishConfig": {
+		"@charliewilco:registry": "https://npm.pkg.github.com/"
 	}
 }

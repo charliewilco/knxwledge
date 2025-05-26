@@ -7,24 +7,22 @@ on:
 
 jobs:
   publish:
+    permissions:
+      packages: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: "https://registry.npmjs.org"
 
-      - run: bun install
-      - run: bun run build
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: "https://npm.pkg.github.com"
       # Publish to GitHub Packages
-      - run: bun publish
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      - run: bun run build
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
