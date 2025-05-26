@@ -6,7 +6,7 @@ on:
       - "*"
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,10 +19,6 @@ jobs:
 
       - run: bun install
       - run: bun run build
-      # Publish to npm
-      - run: bun publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v4
         with:
