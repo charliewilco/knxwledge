@@ -46,7 +46,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@jest/globals": "^30.0.0",
 		"@swc/jest": "^0.2.38",
-		"jest": "^29.7.0",
+		"jest": "^30.0.0",
 		"lefthook": "^1.11.13",
 		"publint": "^0.3.12",
 		"tsdown": "^0.12.7",
