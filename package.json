@@ -37,8 +37,8 @@
 	},
 	"scripts": {
 		"build": "tsdown --config config/tsdown.config.ts",
-		"test": "jest --verbose --silent --config=./config/jest.config.cjs",
-		"coverage": "jest --verbose --silent --config=./config/jest.config.cjs --coverage",
+		"test": "jest --verbose --silent",
+		"coverage": "jest --verbose --silent --coverage",
 		"lint": "biome lint ./src ./scripts --log-level=error",
 		"format": "biome format --write ./src ./config *.json"
 	},
@@ -51,6 +51,14 @@
 		"publint": "^0.3.12",
 		"tsdown": "^0.12.7",
 		"typescript": "^5"
+	},
+	"jest": {
+		"testMatch": [
+			"<rootDir>/src/**/*.(spec|test).[jt]s"
+		],
+		"transform": {
+			"^.+\\.(t|j)sx?$": "@swc/jest"
+		}
 	},
 	"publishConfig": {
 		"@charliewilco:registry": "https://npm.pkg.github.com/"

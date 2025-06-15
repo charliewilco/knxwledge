@@ -1,3 +1,1 @@
-{
-	"jest.jestCommandLine": "pnpm exec jest --config=./config/jest.config.cjs"
-}
+{}

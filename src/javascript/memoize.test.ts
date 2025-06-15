@@ -9,7 +9,7 @@ describe("Memozie", () => {
 	test("calls from cache", () => {
 		expect(memoizedAdd(3)).toBe(13);
 		expect(memoizedAdd(3)).toBe(13);
-		expect(add).toBeCalledTimes(1);
+		expect(add).toHaveBeenCalledTimes(1);
 	});
 
 	test("returns a function", () => {

@@ -13,7 +13,7 @@ describe("Binary search", () => {
 			binarySearch([], 3);
 		}
 
-		expect(searchEmpty).toThrowError();
+		expect(searchEmpty).toThrow();
 	});
 
 	test("throws an error if there are no items", () => {
@@ -21,6 +21,6 @@ describe("Binary search", () => {
 			binarySearch([3, 1, 4, 2], 3);
 		}
 
-		expect(searchUnsorted).toThrowError();
+		expect(searchUnsorted).toThrow();
 	});
 });
