@@ -49,7 +49,7 @@
 		"jest": "^30.0.0",
 		"lefthook": "^1.11.14",
 		"publint": "^0.3.12",
-		"tsdown": "^0.12.8",
+		"tsdown": "^0.12.9",
 		"typescript": "^5"
 	},
 	"jest": {
