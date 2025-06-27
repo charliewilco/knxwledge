@@ -43,7 +43,7 @@
 		"format": "biome format --write ./src ./config *.json"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.0.5",
+		"@biomejs/biome": "2.0.6",
 		"@jest/globals": "^30.0.3",
 		"@swc/jest": "^0.2.38",
 		"jest": "^30.0.0",
