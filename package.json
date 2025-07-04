@@ -47,7 +47,7 @@
 		"@jest/globals": "^30.0.4",
 		"@swc/jest": "^0.2.38",
 		"jest": "^30.0.0",
-		"lefthook": "^1.11.15",
+		"lefthook": "^1.11.16",
 		"publint": "^0.3.12",
 		"tsdown": "^0.12.9",
 		"typescript": "^5"
