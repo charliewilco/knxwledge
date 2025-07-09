@@ -45,7 +45,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.1.0",
 		"@jest/globals": "^30.0.4",
-		"@swc/jest": "^0.2.38",
+		"@swc/jest": "^0.2.39",
 		"jest": "^30.0.0",
 		"lefthook": "^1.11.16",
 		"publint": "^0.3.12",
