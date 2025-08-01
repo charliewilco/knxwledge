@@ -28,10 +28,10 @@ importers:
         version: 0.3.12
       tsdown:
         specifier: ^0.12.9
-        version: 0.12.9(publint@0.3.12)(typescript@5.8.3)
+        version: 0.12.9(publint@0.3.12)(typescript@5.9.2)
       typescript:
         specifier: ^5
-        version: 5.8.3
+        version: 5.9.2
 
 packages:
 
@@ -1772,8 +1772,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3679,7 +3679,7 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  rolldown-plugin-dts@0.13.12(rolldown@1.0.0-beta.19)(typescript@5.8.3):
+  rolldown-plugin-dts@0.13.12(rolldown@1.0.0-beta.19)(typescript@5.9.2):
     dependencies:
       '@babel/generator': 7.27.5
       '@babel/parser': 7.27.5
@@ -3691,7 +3691,7 @@ snapshots:
       get-tsconfig: 4.10.1
       rolldown: 1.0.0-beta.19
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - oxc-resolver
       - supports-color
@@ -3815,7 +3815,7 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  tsdown@0.12.9(publint@0.3.12)(typescript@5.8.3):
+  tsdown@0.12.9(publint@0.3.12)(typescript@5.9.2):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
@@ -3825,14 +3825,14 @@ snapshots:
       empathic: 2.0.0
       hookable: 5.5.3
       rolldown: 1.0.0-beta.19
-      rolldown-plugin-dts: 0.13.12(rolldown@1.0.0-beta.19)(typescript@5.8.3)
+      rolldown-plugin-dts: 0.13.12(rolldown@1.0.0-beta.19)(typescript@5.9.2)
       semver: 7.7.2
       tinyexec: 1.0.1
       tinyglobby: 0.2.14
       unconfig: 7.3.2
     optionalDependencies:
       publint: 0.3.12
-      typescript: 5.8.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - '@typescript/native-preview'
       - oxc-resolver
@@ -3846,7 +3846,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typescript@5.8.3: {}
+  typescript@5.9.2: {}
 
   unconfig@7.3.2:
     dependencies:
