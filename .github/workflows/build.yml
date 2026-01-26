@@ -8,15 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'pnpm'
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install deps and build package
-        run: pnpm install
+        run: bun install
       - name: Build
-        run: pnpm build
+        run: bun run build
       - name: Test
-        run: pnpm coverage 
+        run: bun run coverage
