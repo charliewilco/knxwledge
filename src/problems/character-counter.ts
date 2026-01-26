@@ -1,3 +1,6 @@
+/**
+ * Counts letter frequency in a sentence (letters only, case-insensitive).
+ */
 export function countCharacterFrequency(sentence: string): Record<string, number> {
 	const letter = /^[A-Za-z]*$/;
 

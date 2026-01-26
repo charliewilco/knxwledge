@@ -1,6 +1,9 @@
 // 1.1 Is Unique: Implement an algorithm to determine if a string has all unique characters.
 // What if you cannot use additional data structures?
 
+/**
+ * Returns true if the string has all unique characters.
+ */
 export function isUnique(str: string): boolean {
 	const charsMap: Record<string, number> = {};
 
@@ -16,6 +19,9 @@ export function isUnique(str: string): boolean {
 	return result;
 }
 
+/**
+ * Quadratic-time unique character check (no extra data structure).
+ */
 export function isUniqueQuadratic(str: string): boolean {
 	const prevCharacters: string[] = [];
 	let result = true;
@@ -36,6 +42,9 @@ export function isUniqueQuadratic(str: string): boolean {
 
 // 1.2 Check Permutation: Given two strings, write a method to decide if one is a permuation of the other.
 
+/**
+ * Returns true if one string is a permutation of the other.
+ */
 export function isPermutation(str: string, otherStr: string): boolean {
 	if (str.length !== otherStr.length) {
 		return false;
@@ -59,6 +68,9 @@ export function isPermutation(str: string, otherStr: string): boolean {
 // You may assume that the string has sufficient space at the end to hold the additional characters
 // amd that you are given the "true" length of the string.
 
+/**
+ * Replaces spaces with '%20' in a trimmed string.
+ */
 export function urlify(url: string): string {
 	const separator = "%20";
 	const groups = url.trim().split(" ");
@@ -74,6 +86,9 @@ export function urlify(url: string): string {
 // 1.4 Palindrome Permutation: Given a string, write a function to check if it is a permutation of a palindrome.
 // The palidrome does not need to be limited to just dictionary words, you can ignore casing an non-letter characters
 
+/**
+ * Returns true if a string is a permutation of a palindrome.
+ */
 export function containsPermutationPalindromes(base: string): boolean {
 	function isOdd(num: number) {
 		if (num === 0) return false;
@@ -113,6 +128,9 @@ export function containsPermutationPalindromes(base: string): boolean {
 
 // 1.5 One Away
 // NOT DONE
+/**
+ * Placeholder for the "one away" exercise.
+ */
 export function oneAway(predicate: string, deviation: string): boolean {
 	const n = predicate === deviation;
 	return n || true;

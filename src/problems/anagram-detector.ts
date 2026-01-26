@@ -1,3 +1,7 @@
+/**
+ * Finds all words that have at least one anagram match in the input list.
+ * Returns a de-duplicated list of the matching words.
+ */
 export function anagramDetector(input: string[]): string[] {
 	const prev = new Map<number, string[]>();
 	const result = new Set<string>();

@@ -1,5 +1,8 @@
 // https://hackernoon.com/the-little-guide-of-linked-list-in-javascript-9daf89b63b54
 
+/**
+ * Singly linked list implementation with basic helpers.
+ */
 export class LinkedList<T> {
 	constructor(payload?: T) {
 		if (payload) {
@@ -25,6 +28,9 @@ export class LinkedList<T> {
 		return current;
 	}
 
+	/**
+	 * Returns the number of nodes in the list.
+	 */
 	public size(): number {
 		let count: number = 0;
 
@@ -43,6 +49,9 @@ export class LinkedList<T> {
 		return count;
 	}
 
+	/**
+	 * Appends a new node to the end of the list.
+	 */
 	public addToTail(payload: T) {
 		if (this.head !== null) {
 			const last: ListNode<T> = this.getLastNode();
@@ -53,6 +62,9 @@ export class LinkedList<T> {
 		}
 	}
 
+	/**
+	 * Returns the node at the given index or throws if out of bounds.
+	 */
 	// biome-ignore lint/suspicious/noConfusingVoidType: Not all paths return a value
 	public getByIndex(idx: number): ListNode<T> | void {
 		if (idx >= this.size()) {
@@ -78,6 +90,9 @@ interface Node<T> {
 	payload: T;
 }
 
+/**
+ * Node for the linked list.
+ */
 export class ListNode<T> implements Node<T> {
 	constructor(payload: T) {
 		this.payload = payload;

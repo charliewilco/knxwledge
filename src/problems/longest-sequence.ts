@@ -1,3 +1,7 @@
+/**
+ * Returns the longest contiguous increasing sequence in the array.
+ * If no increasing run longer than 1 exists, returns an empty array.
+ */
 export function longestIncrSequence(arr: number[]): number[] {
 	if (arr.length > 0) {
 		let longestIndex = -1;

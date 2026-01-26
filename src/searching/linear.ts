@@ -1,3 +1,6 @@
+/**
+ * Linear search. Returns the index of the target or -1 if not found.
+ */
 export function linearSearch<T>(arr: T[], target: T): number {
 	const n = arr.length;
 	for (let i = 0; i < n; i++) {

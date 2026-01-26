@@ -19,6 +19,9 @@ type EmitterEventsType = Record<string, Function[]>;
  * database query events, and server status events.
  * @param events - an object containing the events to initialize the emitter with
  */
+/**
+ * Simple event emitter with subscribe and emit.
+ */
 export class EventEmitter {
 	public events: EmitterEventsType;
 	constructor(events?: EmitterEventsType) {
@@ -26,7 +29,7 @@ export class EventEmitter {
 	}
 
 	/**
-	 * subscribe
+	 * Subscribes a callback to an event name.
 	 */
 	public subscribe(name: string, cb: Function) {
 		// biome-ignore lint/suspicious/noAssignInExpressions: You're not the boss of me.
@@ -44,6 +47,9 @@ export class EventEmitter {
 	}
 }
 
+/**
+ * Event emitter backed by a Map of callbacks to event names.
+ */
 export function createEventEmitterMap() {
 	const events = new Map<Function, string>();
 
@@ -77,6 +83,9 @@ export function createEventEmitterMap() {
 	};
 }
 
+/**
+ * Lightweight event emitter factory using a plain object.
+ */
 export function createEventEmitter(e?: EmitterEventsType) {
 	let events: EmitterEventsType = e || {};
 

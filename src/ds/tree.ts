@@ -4,6 +4,9 @@ interface TreeLike<T> {
 	right: TreeLike<T> | null;
 }
 
+/**
+ * Binary search tree-like structure with insert/contains helpers.
+ */
 export class Tree<T> implements TreeLike<T> {
 	constructor(payload: T) {
 		this.root = payload;
@@ -15,6 +18,9 @@ export class Tree<T> implements TreeLike<T> {
 	public left: Tree<T> | null;
 	public right: Tree<T> | null;
 
+	/**
+	 * Inserts a value into the tree based on comparisons.
+	 */
 	public insert(value: T): void {
 		if (value < this.root) {
 			if (this.left === null) {
@@ -31,6 +37,9 @@ export class Tree<T> implements TreeLike<T> {
 		}
 	}
 
+	/**
+	 * Returns true if the value exists in the tree.
+	 */
 	public contains(value: T): boolean {
 		if (value === this.root) {
 			return true;
@@ -47,6 +56,9 @@ export class Tree<T> implements TreeLike<T> {
 		return this.right.contains(value);
 	}
 
+	/**
+	 * In-order traversal (left -> right). No-op for values.
+	 */
 	public logInOrder(): void {
 		if (this.left !== null) {
 			this.left.logInOrder();

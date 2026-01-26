@@ -1,3 +1,6 @@
+/**
+ * Internal node for the binary search tree.
+ */
 class TreeNode<T> {
 	public value: T;
 	public left: TreeNode<T> | null = null;
@@ -11,6 +14,9 @@ class TreeNode<T> {
 	}
 }
 
+/**
+ * Binary search tree with insert/search and traversal helpers.
+ */
 export class BinarySearchTree<T> {
 	private _size: number = 0;
 	public root: TreeNode<T>;
@@ -24,6 +30,9 @@ export class BinarySearchTree<T> {
 		return this._size;
 	}
 
+	/**
+	 * Inserts a value into the tree.
+	 */
 	public insert(value: T) {
 		this._size++;
 
@@ -48,6 +57,9 @@ export class BinarySearchTree<T> {
 		searchTree(this.root);
 	}
 
+	/**
+	 * Returns the minimum value in the tree.
+	 */
 	public min(): T {
 		let current = this.root;
 
@@ -57,6 +69,9 @@ export class BinarySearchTree<T> {
 		return current.value;
 	}
 
+	/**
+	 * Returns the maximum value in the tree.
+	 */
 	public max(): T {
 		let current = this.root;
 
@@ -67,6 +82,9 @@ export class BinarySearchTree<T> {
 		return current.value;
 	}
 
+	/**
+	 * Returns true if the tree contains the value.
+	 */
 	public contains(value: T): boolean {
 		let current = this.root;
 		while (current) {
@@ -84,6 +102,9 @@ export class BinarySearchTree<T> {
 		return false;
 	}
 
+	/**
+	 * Returns an in-order depth-first traversal.
+	 */
 	public depthFirstSearchInOrder() {
 		let result: T[] = [];
 
@@ -103,6 +124,9 @@ export class BinarySearchTree<T> {
 		return result;
 	}
 
+	/**
+	 * Returns a pre-order depth-first traversal.
+	 */
 	public depthFirstSearchPreOrder() {
 		let result: T[] = [];
 
@@ -118,6 +142,9 @@ export class BinarySearchTree<T> {
 		return result;
 	}
 
+	/**
+	 * Returns a post-order depth-first traversal.
+	 */
 	public depthFirstSearchPostOrder() {
 		let result: T[] = [];
 
@@ -134,6 +161,9 @@ export class BinarySearchTree<T> {
 		return result;
 	}
 
+	/**
+	 * Returns a breadth-first traversal.
+	 */
 	public bredthFirstSearch() {
 		let result: T[] = [];
 		let queue = [];

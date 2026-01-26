@@ -1,3 +1,6 @@
+/**
+ * Flattens a nested array iteratively by one level.
+ */
 export function flatIterative<T>(input: T[]): T[] {
 	const result: T[] = [];
 	const stack = Array.from(input);
@@ -11,6 +14,9 @@ export function flatIterative<T>(input: T[]): T[] {
 	return result;
 }
 
+/**
+ * Flattens a nested array recursively to the provided depth.
+ */
 export function flatRecursive<T>(input: T[], depth: number = 1): T[] {
 	return depth > 0
 		? input.reduce(

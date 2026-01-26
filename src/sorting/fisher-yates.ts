@@ -1,3 +1,6 @@
+/**
+ * Summary of shuffle outcomes used by the checker.
+ */
 export interface ShuffledReport {
 	count: number;
 	potential: number;
@@ -5,16 +8,25 @@ export interface ShuffledReport {
 	indexes: number[];
 }
 
+/**
+ * Fisher-Yates shuffle with a simple randomness report.
+ */
 export class FisherYatesShuffle<T> {
 	private _input: T[];
 	private _thresholds: number[] = [0.25, 0.5, 0.75];
 	public result: T[];
 	public resultDetails: ShuffledReport;
 
+	/**
+	 * Returns a shuffled copy of the input.
+	 */
 	public static randomize<T>(input: T[]) {
 		return new FisherYatesShuffle(input).result;
 	}
 
+	/**
+	 * Returns a shuffle instance with results and report.
+	 */
 	public static from<T>(input: T[]) {
 		return new FisherYatesShuffle(input);
 	}
@@ -40,6 +52,9 @@ export class FisherYatesShuffle<T> {
 		return clone;
 	}
 
+	/**
+	 * Counts how many shuffle thresholds are passed.
+	 */
 	public checkThresholds(): number {
 		const report = this.resultDetails;
 		let passes = 0;
@@ -51,6 +66,9 @@ export class FisherYatesShuffle<T> {
 		return passes;
 	}
 
+	/**
+	 * Generates a report comparing input vs shuffled indexes.
+	 */
 	public generateReport(): ShuffledReport {
 		let count: number = 0;
 		let indexes: number[] = [];

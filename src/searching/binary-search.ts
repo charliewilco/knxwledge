@@ -1,3 +1,6 @@
+/**
+ * Returns true if the list is sorted in ascending order.
+ */
 export function isSorted<T>(list: T[]): boolean {
 	let val: boolean = true;
 	for (let i = 0; i < list.length; i++) {
@@ -10,6 +13,9 @@ export function isSorted<T>(list: T[]): boolean {
 	return val;
 }
 
+/**
+ * Binary search over a sorted list. Returns the index of the item.
+ */
 export function binarySearch<T>(list: T[], item: T): number {
 	if (list.length <= 0) {
 		throw new Error("list has no items");

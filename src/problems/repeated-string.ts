@@ -32,6 +32,9 @@ Print a single integer denoting the number of letter a's in the first  letters o
 // what if the n, is lower than the string input
 //
 
+/**
+ * Counts the number of "a" characters in the first N chars of an infinitely repeated string.
+ */
 export function repeatedString(predicate: string, repeatedLimit: number) {
 	const reducer = (acc: number, val: string): number => {
 		const assertion = val === "a";

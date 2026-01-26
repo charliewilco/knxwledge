@@ -9,16 +9,25 @@ interface IObserver<T> {
 
 type ObserverCallback<T> = (observer: IObserver<T>) => T;
 
+/**
+ * Minimal observable with subscribe + map.
+ */
 export class Observable<T> {
 	private _fn: ObserverCallback<T>;
 	constructor(fn: ObserverCallback<T>) {
 		this._fn = fn;
 	}
 
+	/**
+	 * Subscribes to the observable.
+	 */
 	public subscribe(observer: IObserver<T>) {
 		return this._fn(observer);
 	}
 
+	/**
+	 * Projects values to a new observable.
+	 */
 	public map(projectionFn: ProjectionFn<T>) {
 		return new Observable((observer) => {
 			return this.subscribe({

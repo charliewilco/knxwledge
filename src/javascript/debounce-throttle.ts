@@ -1,3 +1,6 @@
+/**
+ * Debounces a function so it only fires after a wait period.
+ */
 export function debounce(fn: Function, wait: number, immediate: boolean = false) {
 	let timeout: NodeJS.Timeout | null = null;
 	return function runFn() {
@@ -20,6 +23,9 @@ export function debounce(fn: Function, wait: number, immediate: boolean = false)
 	};
 }
 
+/**
+ * Throttles a function to fire at most once per wait period.
+ */
 export function throttle(fn: Function, wait: number) {
 	let lastCalled: number | undefined;
 	let previousCall: number | undefined;

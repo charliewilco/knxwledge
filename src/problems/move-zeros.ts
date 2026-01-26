@@ -16,6 +16,9 @@ Constraints:
 [output] array.integer
 */
 
+/**
+ * Moves zeroes to the end by building a new array (non-mutating).
+ */
 export function moveZerosBrute(arr: number[]): number[] {
 	const not = [];
 	let zeroCount = 0;
@@ -31,6 +34,9 @@ export function moveZerosBrute(arr: number[]): number[] {
 	return not.concat(Array(zeroCount).fill(0));
 }
 
+/**
+ * In-place move of zeroes to the end while preserving relative order.
+ */
 export function moveZerosLessBad(arr: number[]) {
 	let index = 0;
 

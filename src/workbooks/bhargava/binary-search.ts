@@ -25,6 +25,9 @@ print(binarySearch(MY_LIST, 3))
  * ```
  */
 
+/**
+ * Binary search from "Grokking Algorithms" examples.
+ */
 export const binarySearch = <T>(list: T[], target: T) => {
 	let left: number = 0;
 	let right: number = list.length - 1;

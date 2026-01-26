@@ -10,6 +10,9 @@ Output: 6
 Explanation: The optimal path is 2 -> 1 -> 3 which has a sum of 6.
  */
 
+/**
+ * Binary tree node used by the max path sum exercise.
+ */
 export class TreeNode {
 	val: number;
 	left: TreeNode | null;
@@ -22,6 +25,9 @@ export class TreeNode {
 	}
 }
 
+/**
+ * Computes the maximum path sum in a binary tree.
+ */
 export function maxPathSum(root: TreeNode | null): number {
 	let maxSum = Number.MIN_SAFE_INTEGER;
 

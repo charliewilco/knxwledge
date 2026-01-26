@@ -1,10 +1,16 @@
 // TODO: Find something that doesn't mutate
+/**
+ * Swaps two items in-place.
+ */
 export function swap<T>(arr: T[], i: number, j: number) {
 	let temp = arr[i];
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
 
+/**
+ * Partitions the array around a pivot index.
+ */
 export function partition<T>(arr: T[], pivot: number, left: number, right: number): number {
 	let pivotValue = arr[pivot];
 	let partitionIndex = left;
@@ -19,6 +25,9 @@ export function partition<T>(arr: T[], pivot: number, left: number, right: numbe
 	return partitionIndex;
 }
 
+/**
+ * In-place quick sort using index boundaries.
+ */
 export function quickSort<T>(arr: T[], left: number, right: number): T[] {
 	let _len: number = arr.length;
 	let pivot: number;
@@ -35,6 +44,9 @@ export function quickSort<T>(arr: T[], left: number, right: number): T[] {
 	return arr;
 }
 
+/**
+ * Quick sort wrapper with optional comparison function.
+ */
 export class QuickSort<T> {
 	private arr: T[];
 

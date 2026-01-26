@@ -1,4 +1,7 @@
 // https://medium.freecodecamp.org/understanding-memoize-in-javascript-51d07d19430e
+/**
+ * Memoizes a single-argument function using the first argument as cache key.
+ */
 export function memoize<T>(fn: Function): Function {
 	let cache: Record<string, T> = {};
 

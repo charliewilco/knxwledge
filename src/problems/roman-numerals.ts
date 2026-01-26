@@ -17,6 +17,9 @@ const KEY = {
 	M: 1000,
 };
 
+/**
+ * Parses a Roman numeral string and returns its integer value.
+ */
 // biome-ignore lint/suspicious/noConfusingVoidType: not all paths return a value
 export function getIntfromNumeral(roman: string): number | void {
 	const criteria: RegExp = RegExp(/[I|V|X|L|C|D|M]/gm);
