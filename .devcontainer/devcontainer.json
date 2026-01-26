@@ -3,11 +3,6 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "22"
-		}
-	},
 	"customizations": {
 		"vscode": {
 			"extensions": ["biomejs.biome", "oven.bun-vscode"],
@@ -23,7 +18,7 @@
 			}
 		}
 	},
-	"postCreateCommand": "pnpm install",
+	"postCreateCommand": "bun install",
 	"waitFor": "postCreateCommand",
-	"remoteUser": "node"
+	"remoteUser": "bun"
 }

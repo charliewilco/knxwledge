@@ -1,4 +1,4 @@
-FROM node:22-bookworm
+FROM oven/bun:1
 
 # Install needed packages and setup non-root user
 RUN apt-get update \
@@ -10,11 +10,10 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install pnpm
-RUN npm install -g pnpm@10.6.1
+RUN id -u bun >/dev/null 2>&1 || useradd -m bun
 
 # Set up working directory
 WORKDIR /workspaces/casino-games
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
-USER node
+USER bun
