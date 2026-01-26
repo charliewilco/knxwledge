@@ -1,6 +1,0 @@
-- use `bun`
-- use hard tabs
-- use Bun for unit tests
-- prefer impoting globals in unit tests from "bun:test"
-- do not add dependencies
-- follow formatting found in biome.json
