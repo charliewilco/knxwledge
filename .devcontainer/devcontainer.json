@@ -1,5 +1,5 @@
 {
-	"name": "Casino Games Development",
+	"name": "Knxwledge Dev Container",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
@@ -12,9 +12,7 @@
 				"editor.codeActionsOnSave": {
 					"source.fixAll.biome": true
 				},
-				"typescript.tsdk": "node_modules/typescript/lib",
-				"typescript.enablePromptUseWorkspaceTsdk": true,
-				"typescript.experimental.useTsgo": true
+				"typescript.tsdk": "node_modules/typescript/lib"
 			}
 		}
 	},
