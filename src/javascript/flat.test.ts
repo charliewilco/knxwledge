@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { flatIterative, flatRecursive } from "./flat";
 
 describe("Flatten array", () => {

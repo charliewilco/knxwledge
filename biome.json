@@ -1,8 +1,6 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
+	"$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
+
 	"formatter": {
 		"lineWidth": 100,
 		"indentStyle": "tab"
@@ -16,6 +14,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"correctness": {
+				"noUnusedPrivateClassMembers": "off"
+			},
 			"complexity": {
 				"noBannedTypes": "off",
 				"noUselessThisAlias": "warn",
@@ -23,7 +24,6 @@
 				"noForEach": "warn"
 			},
 			"style": {
-				"noArguments": "off",
 				"noInferrableTypes": "off",
 				"useConst": "off",
 				"noParameterAssign": "warn",
@@ -33,7 +33,8 @@
 			"suspicious": {
 				"noAssignInExpressions": "warn",
 				"noConfusingVoidType": "warn",
-				"noExplicitAny": "warn"
+				"noExplicitAny": "warn",
+				"useAdjacentOverloadSignatures": "off"
 			}
 		}
 	},
@@ -41,5 +42,12 @@
 		"enabled": true,
 		"clientKind": "git",
 		"useIgnoreFile": true
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	}
 }

@@ -20,7 +20,7 @@ export function partition<T>(arr: T[], pivot: number, left: number, right: numbe
 }
 
 export function quickSort<T>(arr: T[], left: number, right: number): T[] {
-	let len: number = arr.length;
+	let _len: number = arr.length;
 	let pivot: number;
 	let partitionIndex: number;
 

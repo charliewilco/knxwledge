@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@jest/globals";
-import { TreeNode, maxPathSum } from "./max-path-sum.ts";
+import { describe, expect, test } from "bun:test";
+import { maxPathSum, TreeNode } from "./max-path-sum.ts";
 
 describe("maxPathSum", () => {
 	test("calculates maximum path sum in a simple binary tree", () => {

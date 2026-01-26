@@ -1,7 +1,7 @@
-import { describe, expect, jest, test } from "@jest/globals";
+import { describe, expect, mock, test } from "bun:test";
 import { memoize } from "./memoize.ts";
 
-const add = jest.fn((n: number): number => n + 10);
+const add = mock((n: number): number => n + 10);
 
 const memoizedAdd = memoize(add);
 

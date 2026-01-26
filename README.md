@@ -16,17 +16,11 @@ git clone https://github.com/charliewilco/knxwledge.git
 
 ### Prerequisites
 
-This project uses Node as it's TypeScript runtime and pnpm as it's package manager. Install Node and pnpm.
+This project uses Node as it's TypeScript runtime and bun as it's package manager. Install Bun.
 
-Node via fnm
-```
-curl -o- https://fnm.vercel.app/install | bash
-fnm install 22
-```
 
-pnpm:
 ```sh
-curl -fsSL https://get.pnpm.io/install.sh | sh -
+curl -fsSL https://bun.sh/install | bash
 ```
 
 ---
@@ -34,19 +28,19 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 Install the dependencies:
 
 ```sh
-pnpm install
+bun install
 ```
 
-Primarily this project uses native build commands and test runner from [Jest](https://jestjs.io). Additionally, it uses [Biome](https://biomejs.dev/) for linting and formatting.
+Primarily this project uses native build commands and test runner from [Bun](https://bun.sh). Additionally, it uses [Biome](https://biomejs.dev/) for linting and formatting.
 
 Run development script
 
 ```sh
-pnpm build
+bun run build
 ```
 
 Or run the tests
 
 ```sh
-pnpm test
+bun run test
 ```

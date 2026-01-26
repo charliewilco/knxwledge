@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { _ } from "./lodash-like.ts";
 
 const testDataObject = {

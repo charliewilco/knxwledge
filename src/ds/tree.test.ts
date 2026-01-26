@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { Tree } from "./tree";
 
 const t = new Tree<number>(5);

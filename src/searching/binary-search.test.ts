@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { binarySearch } from "./binary-search.ts";
 
 const items = [0, 1, 4, 13, 17, 24, 31, 45, 62, 75, 81, 96];

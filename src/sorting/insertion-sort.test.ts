@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { InsertionSort } from "./insertion-sort.ts";
 
 describe("Insertion Sort", () => {

@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { LinkedList, type ListNode } from "./linked-list.ts";
 
 let linkedList = new LinkedList<number>(1);

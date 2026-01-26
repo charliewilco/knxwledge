@@ -1,7 +1,7 @@
-import { describe, expect, jest, test } from "@jest/globals";
-import { EventEmitter, createEventEmitter, createEventEmitterMap } from "./event-emitter.ts";
+import { describe, expect, mock, test } from "bun:test";
+import { createEventEmitter, createEventEmitterMap, EventEmitter } from "./event-emitter.ts";
 
-const _mock = jest.fn();
+const _mock = mock();
 
 describe("Event Emitter", () => {
 	test("emits result when fired", () => {
@@ -19,7 +19,7 @@ describe("Event Emitter", () => {
 		const m = new EventEmitter({});
 
 		m.subscribe("mock event", _mock);
-		m.subscribe("other mock event", jest.fn);
+		m.subscribe("other mock event", mock);
 		const events = Object.keys(m.events);
 
 		expect(events).toContain("mock event");
@@ -28,7 +28,7 @@ describe("Event Emitter", () => {
 
 	test("fires call back when emitted", () => {
 		const m = new EventEmitter({});
-		let val = 0;
+		let _val = 0;
 
 		m.subscribe("mock event", (n: number) => _mock(n));
 		m.emit("mock event", 18);
@@ -82,7 +82,7 @@ describe("Event Emitter Function", () => {
 
 	test("fires call back when emitted", () => {
 		const m = createEventEmitter();
-		let val = 0;
+		let _val = 0;
 
 		m.subscribe("mock event", (n: number) => _mock(n));
 		m.emit("mock event", 18);
@@ -127,7 +127,7 @@ describe("Event Emitter  with a Map", () => {
 		const m = createEventEmitterMap();
 
 		m.subscribe("mock event", _mock);
-		m.subscribe("other mock event", () => jest.fn());
+		m.subscribe("other mock event", () => mock());
 
 		const events = m.getEventNames();
 
@@ -137,7 +137,7 @@ describe("Event Emitter  with a Map", () => {
 
 	test("fires call back when emitted", () => {
 		const m = createEventEmitterMap();
-		let val = 0;
+		let _val = 0;
 
 		m.subscribe("mock event", (n: number) => _mock(n));
 		m.emit("mock event", 18);
@@ -152,7 +152,7 @@ describe("Event Emitter  with a Map", () => {
 
 		// biome-ignore lint/suspicious/noAssignInExpressions: Expression as assign as a little treat
 		const e = m.subscribe("mock event", (n: number) => (val = n));
-		m.subscribe("other mock event", jest.fn);
+		m.subscribe("other mock event", mock);
 		m.emit("mock event", 10);
 		expect(val).toBe(10);
 

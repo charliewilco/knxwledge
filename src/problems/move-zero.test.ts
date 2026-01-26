@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "bun:test";
 import { moveZerosBrute, moveZerosLessBad } from "./move-zeros.ts";
 
 describe("Move Zeroes", () => {

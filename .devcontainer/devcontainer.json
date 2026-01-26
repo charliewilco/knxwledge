@@ -10,7 +10,7 @@
 	},
 	"customizations": {
 		"vscode": {
-			"extensions": ["biomejs.biome", "orta.vscode-jest"],
+			"extensions": ["biomejs.biome", "oven.bun-vscode"],
 			"settings": {
 				"editor.formatOnSave": true,
 				"editor.defaultFormatter": "biomejs.biome",
