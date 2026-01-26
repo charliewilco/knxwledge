@@ -9,7 +9,7 @@ export default defineConfig({
 		"src/ds.ts",
 		"src/js.ts",
 	],
-	outDir: "dist",
+	outDir: "./dist",
 	clean: true,
 	minify: true,
 	publint: true,
