@@ -43,7 +43,7 @@
 		"format": "biome format --write ./src *.json"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.6",
+		"@biomejs/biome": "2.4.7",
 		"@types/bun": "latest",
 		"lefthook": "^2.1.4",
 		"publint": "^0.3.17",
