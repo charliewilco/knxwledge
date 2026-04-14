@@ -47,7 +47,7 @@
 		"@types/bun": "latest",
 		"lefthook": "^2.1.5",
 		"publint": "^0.3.17",
-		"tsdown": "^0.21.7",
+		"tsdown": "^0.21.8",
 		"typescript": "^6"
 	},
 	"publishConfig": {
