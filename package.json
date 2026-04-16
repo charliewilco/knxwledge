@@ -46,7 +46,7 @@
 		"@biomejs/biome": "2.4.12",
 		"@types/bun": "latest",
 		"lefthook": "^2.1.6",
-		"tsdown": "^0.21.8",
+		"tsdown": "^0.21.9",
 		"typescript": "^6"
 	},
 	"publishConfig": {
