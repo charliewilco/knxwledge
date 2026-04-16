@@ -12,8 +12,7 @@ export default defineConfig({
 	outDir: "./dist",
 	clean: true,
 	minify: true,
-	publint: true,
-	platform: "neutral",
+	platform: "node",
 	format: ["esm"],
 	dts: true,
 });

@@ -9,8 +9,8 @@ describe("Longest increasing sequence", () => {
 		expect(longestIncrSequence([1, 1])).toEqual([]);
 		expect(longestIncrSequence([1])).toEqual([]);
 
-		// @ts-ignore-start
+		//·@ts-expect-error-start
 		expect(longestIncrSequence("")).toEqual([]);
-		// @ts-ignore-end
+		//·@ts-expect-error-end
 	});
 });

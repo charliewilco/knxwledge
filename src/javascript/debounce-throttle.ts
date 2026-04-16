@@ -4,6 +4,7 @@
 export function debounce(fn: Function, wait: number, immediate: boolean = false) {
 	let timeout: NodeJS.Timeout | null = null;
 	return function runFn() {
+		// biome-ignore lint/complexity/noArguments: arguments are needed for the function call
 		const args = arguments;
 		// biome-ignore lint/complexity/noUselessThisAlias: clearer to apply context to the given function
 		const context = this;
@@ -31,6 +32,7 @@ export function throttle(fn: Function, wait: number) {
 	let previousCall: number | undefined;
 	return function runner() {
 		lastCalled = Date.now();
+		// biome-ignore lint/complexity/noArguments: arguments are needed for the function call
 		const args = arguments;
 		// biome-ignore lint/complexity/noUselessThisAlias: clearer to apply context to the given function
 		const context = this;

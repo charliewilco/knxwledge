@@ -29,10 +29,10 @@ export class _ {
 		return results;
 	}
 
-	// biome-ignore lint/suspicious/noExplicitAny: param must be ambiguous
 	/**
 	 * Returns true if the given path exists in the object.
 	 */
+	// biome-ignore lint/suspicious/noExplicitAny: param must be ambiguous
 	public static has(data: any, path: string): boolean {
 		const keys = _.getPath(path);
 		let result = false;
@@ -50,10 +50,10 @@ export class _ {
 		return result;
 	}
 
-	// biome-ignore lint/suspicious/noExplicitAny: param must be ambiguous
 	/**
 	 * Returns the value at the given path or undefined.
 	 */
+	// biome-ignore lint/suspicious/noExplicitAny: param must be ambiguous
 	public static get<T>(data: any, path: string): T | undefined {
 		const keys = _.getPath(path);
 		let current = data;
