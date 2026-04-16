@@ -4,6 +4,7 @@
 export class Node<T> {
 	constructor(data: T) {
 		this.data = data;
+		this.next = null;
 	}
 	public data: T;
 	public next: Node<T> | null;
@@ -16,10 +17,12 @@ export class Node<T> {
 export class Queue<T> {
 	public head: Node<T> | null = null;
 	public tail: Node<T> | null = null;
-	private length: number;
 
 	constructor(initialPayload?: T) {
-		if (initialPayload) this.head = new Node(initialPayload);
+		if (initialPayload !== undefined) {
+			this.head = new Node(initialPayload);
+			this.tail = this.head;
+		}
 	}
 
 	/**
@@ -46,12 +49,14 @@ export class Queue<T> {
 	public add(value: T): void {
 		if (this.isEmpty()) {
 			this.head = new Node(value);
+			this.tail = this.head;
+			return;
 		}
 
 		if (this.tail !== null) {
 			this.tail.next = new Node(value);
+			this.tail = this.tail.next;
 		}
-		this.tail = new Node(value);
 	}
 
 	/**
@@ -65,6 +70,9 @@ export class Queue<T> {
 		const { data, next } = this.head;
 
 		this.head = next;
+		if (this.head === null) {
+			this.tail = null;
+		}
 
 		return data;
 	}

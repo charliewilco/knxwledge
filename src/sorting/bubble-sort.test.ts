@@ -63,4 +63,33 @@ describe("BubbleSort", () => {
 			expect(BubbleSort.sort(arr)).toEqual(expected);
 		});
 	});
+
+	describe("optimizedSort", () => {
+		test("should sort numbers without mutating the original array", () => {
+			const arr = [5, 1, 4, 2, 8];
+
+			expect(BubbleSort.optimizedSort(arr)).toEqual([1, 2, 4, 5, 8]);
+			expect(arr).toEqual([5, 1, 4, 2, 8]);
+		});
+
+		test("should support custom compare functions", () => {
+			const arr = [
+				{ name: "Alice", age: 25 },
+				{ name: "Bob", age: 20 },
+				{ name: "Charlie", age: 30 },
+			];
+			const compare = (a: { name: string; age: number }, b: { name: string; age: number }) =>
+				b.age - a.age;
+
+			expect(BubbleSort.optimizedSort(arr, compare)).toEqual([
+				{ name: "Charlie", age: 30 },
+				{ name: "Alice", age: 25 },
+				{ name: "Bob", age: 20 },
+			]);
+		});
+
+		test("should return early for an already sorted array", () => {
+			expect(BubbleSort.optimizedSort([1, 2, 3, 4, 5])).toEqual([1, 2, 3, 4, 5]);
+		});
+	});
 });
