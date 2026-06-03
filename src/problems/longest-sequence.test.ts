@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { longestIncrSequence } from "./longest-sequence.ts";
 
 describe("Longest increasing sequence", () => {
@@ -9,8 +9,6 @@ describe("Longest increasing sequence", () => {
 		expect(longestIncrSequence([1, 1])).toEqual([]);
 		expect(longestIncrSequence([1])).toEqual([]);
 
-		//·@ts-expect-error-start
-		expect(longestIncrSequence("")).toEqual([]);
-		//·@ts-expect-error-end
+		expect(longestIncrSequence("" as unknown as number[])).toEqual([]);
 	});
 });

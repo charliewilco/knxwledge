@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { LinkedList, type ListNode } from "./linked-list.ts";
 
 let linkedList = new LinkedList<number>(1);

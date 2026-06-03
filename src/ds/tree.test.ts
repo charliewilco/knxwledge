@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { Tree } from "./tree";
+import { describe, expect, test } from "#test";
+import { Tree } from "./tree.ts";
 
 const t = new Tree<number>(5);
 t.insert(7);

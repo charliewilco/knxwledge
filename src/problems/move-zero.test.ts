@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { moveZerosBrute, moveZerosLessBad } from "./move-zeros.ts";
 
 describe("Move Zeroes", () => {

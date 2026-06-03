@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { _ } from "./lodash-like.ts";
 
 const testDataObject = {

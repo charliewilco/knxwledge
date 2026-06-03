@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { repeatedString } from "./repeated-string.ts";
 
 describe("Repeated string", () => {

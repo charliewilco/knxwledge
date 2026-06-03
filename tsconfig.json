@@ -9,10 +9,11 @@
 		"declaration": true,
 		"sourceMap": true,
 		"outDir": "dist",
-		"baseUrl": ".",
+		"types": ["node"],
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"noUnusedParameters": true,
+		"strictNullChecks": false,
 		"skipLibCheck": true
 	},
 	"include": ["types/*", "src/**/*"],

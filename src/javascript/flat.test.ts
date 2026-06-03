@@ -1,5 +1,5 @@
-import { describe, expect, test } from "bun:test";
-import { flatIterative, flatRecursive } from "./flat";
+import { describe, expect, test } from "#test";
+import { flatIterative, flatRecursive } from "./flat.ts";
 
 describe("Flatten array", () => {
 	test("Iterative", () => {
