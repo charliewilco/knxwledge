@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { countCharacterFrequency } from "./character-counter.ts";
 
 describe("Character Frequency", () => {

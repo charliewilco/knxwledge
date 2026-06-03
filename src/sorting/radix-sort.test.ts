@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { RadixSort } from "./radix-sort.ts";
 
 describe("RadixSort", () => {

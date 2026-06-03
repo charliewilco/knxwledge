@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { MergeSort } from "./merge-sort.ts";
 
 describe("Merge sort", () => {

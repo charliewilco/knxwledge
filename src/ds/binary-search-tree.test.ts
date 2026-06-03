@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { BinarySearchTree } from "./binary-search-tree.ts";
 
 const bst = new BinarySearchTree<number>(15);

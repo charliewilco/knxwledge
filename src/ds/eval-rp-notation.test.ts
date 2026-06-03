@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { evalRPNotation } from "./eval-reverse-polish-notation.ts";
 
 describe("Eval Reverse Polish Notation", () => {

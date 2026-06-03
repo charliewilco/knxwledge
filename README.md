@@ -16,11 +16,12 @@ git clone https://github.com/charliewilco/knxwledge.git
 
 ### Prerequisites
 
-This project uses Bun as the TypeScript runtime and package manager. Install Bun.
+This project uses Node.js for TypeScript execution, testing, and package management.
+Install Node.js 24.11.0 or newer.
 
 
 ```sh
-curl -fsSL https://bun.sh/install | bash
+node --version
 ```
 
 ---
@@ -28,21 +29,31 @@ curl -fsSL https://bun.sh/install | bash
 Install the dependencies:
 
 ```sh
-bun install
+npm install
 ```
 
-Primarily this project uses native build commands and test runner from [Bun](https://bun.sh). Additionally, it uses [Biome](https://biomejs.dev/) for linting and formatting.
+This project uses Node's built-in test runner with TypeScript support.
+It also uses [Biome](https://biomejs.dev/) for linting and formatting.
 
 Run development script
 
 ```sh
-bun run build
+npm run build
 ```
 
 Or run the tests
 
 ```sh
-bun run test
+npm run test
+```
+
+Run the full local quality pass:
+
+```sh
+npm run typecheck
+npm run lint
+npm run build
+npm run coverage
 ```
 
 ## Exercises
@@ -64,7 +75,7 @@ If you add new exercises, the pattern is:
 
 1) Create a `*.test.ts` file in the topic folder.
 2) Implement the function/class next to it.
-3) Run `bun run test` and iterate.
+3) Run `npm run test` and iterate.
 
 ## Why this exists
 

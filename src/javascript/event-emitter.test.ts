@@ -1,4 +1,4 @@
-import { describe, expect, mock, test } from "bun:test";
+import { describe, expect, mock, test } from "#test";
 import { createEventEmitter, createEventEmitterMap, EventEmitter } from "./event-emitter.ts";
 
 const _mock = mock();

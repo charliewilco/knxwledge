@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { InsertionSort } from "./insertion-sort.ts";
 
 describe("Insertion Sort", () => {

@@ -5,15 +5,19 @@
 - Subdirectories are organized by topic: `src/ds/`, `src/sorting/`, `src/searching/`, `src/problems/`, `src/javascript/`, and `src/workbooks/`.
 - Tests live next to implementations using the `*.test.ts` naming pattern (for example, `src/sorting/merge-sort.test.ts`).
 - Entry points and topic re-exports live at the top of `src/` (for example, `src/index.ts`, `src/ds.ts`, `src/sorting.ts`).
-- Build configuration is in `config/` (notably `config/tsdown.config.ts`).
+- Build configuration is in root-level config files, notably `tsdown.config.ts`,
+  `tsconfig.json`, `biome.json`, and `lefthook.toml`.
 
 ## Build, Test, and Development Commands
-- `bun install` installs dependencies.
-- `bun run build` builds the project using `tsdown`.
-- `bun run test` runs the Bun test suite for all `*.test.ts` files.
-- `bun run coverage` runs tests with coverage output.
-- `bun run lint` runs Biome linting over `./src` (and `./scripts` if present).
-- `bun run format` formats `./src`, `./config`, and root JSON files via Biome.
+- `npm install` installs dependencies.
+- `npm run build` builds the project using `tsdown`.
+- `npm run test` runs Node's built-in test runner for all `*.test.ts` files.
+- `npm run coverage` runs tests with Node's coverage output.
+- `npm run typecheck` runs TypeScript with `noEmit`.
+- `npm run lint` runs Biome linting over `./src`.
+- `npm run format` formats `./src`, `tsdown.config.ts`, and root JSON files via Biome.
+- Use Node.js 24.11.0 or newer; the test scripts rely on Node's built-in
+  TypeScript transform support.
 
 ## Coding Style & Naming Conventions
 - Formatting and linting are enforced by Biome (`biome.json`).
@@ -22,7 +26,7 @@
 - Prefer explicit function exports (for example, `export function mergeSort(...)`).
 
 ## Testing Guidelines
-- Tests use Bun’s built-in runner (`bun:test`).
+- Tests use Node’s built-in runner through the repo-local `#test` helper.
 - Keep tests co-located with implementation files and name them `*.test.ts`.
 - Cover core behavior, edge cases, and input validation where applicable.
 
@@ -33,5 +37,5 @@
 - Include screenshots only when changes affect rendered output (rare for this repo).
 
 ## Tooling & Hooks
-- Pre-commit checks run via Lefthook (`lefthook.toml`) to lint and format staged files.
-- Run `bun run lint` and `bun run format` before opening a PR to match CI expectations.
+- Pre-commit checks run via Lefthook (`lefthook.toml`) and Biome.
+- Run `npm run lint` and `npm run format` before opening a PR to match CI expectations.

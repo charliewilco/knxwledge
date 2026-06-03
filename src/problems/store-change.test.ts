@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { StoreData } from "./store-change.ts";
 
 describe("StoreData", () => {

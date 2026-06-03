@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { linearSearch } from "./linear.ts";
 
 describe("linearSearch", () => {

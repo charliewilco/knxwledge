@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import { partition, QuickSort, quickSort, swap } from "./quick-sort.ts";
 
 describe("Quick sort", () => {

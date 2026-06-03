@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "#test";
 import type { ShuffledReport } from "./fisher-yates.ts";
 import { FisherYatesShuffle } from "./fisher-yates.ts";
 

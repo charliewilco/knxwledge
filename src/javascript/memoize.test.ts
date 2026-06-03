@@ -1,4 +1,4 @@
-import { describe, expect, mock, test } from "bun:test";
+import { describe, expect, mock, test } from "#test";
 import { memoize } from "./memoize.ts";
 
 const add = mock((n: number): number => n + 10);
