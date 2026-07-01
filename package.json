@@ -50,7 +50,7 @@
 		"format": "biome format --write ./src ./tsdown.config.ts *.json"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.1",
+		"@biomejs/biome": "2.5.2",
 		"@types/node": "^26.0.1",
 		"lefthook": "^2.1.8",
 		"tsdown": "^0.22.3",
